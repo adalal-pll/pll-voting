@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<title>PLL All-Star Voting 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#003366;--navy-dk:#001f40;--red:#cc0000;--red-dk:#990000;--gold:#ffcc00;--gold-dk:#e6b800;--white:#fff;--off:#f4f6f9;--gray:#e2e6ed;--gray-mid:#b0b8c4;--text:#1a2035;--muted:#5a6479;--green:#1a7a3b;--green-bg:#e8f5ee;--r:10px;--sh:0 2px 16px rgba(0,30,70,.13)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',sans-serif;background:var(--off);min-height:100vh;color:var(--text)}
+/* HEADER */
+.app-header{background:var(--navy);border-bottom:4px solid var(--red);padding:0 20px;display:flex;align-items:center;height:64px;gap:14px;position:sticky;top:0;z-index:100}
+.hlogo{height:46px;width:auto;object-fit:contain;flex-shrink:0}
+.hdiv{width:1px;height:32px;background:rgba(255,255,255,.2);flex-shrink:0}
+.htitle{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:#fff;line-height:1.15}
+.htitle span{display:block;font-size:11px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:1.5px;text-transform:uppercase;font-family:'Open Sans',sans-serif}
+.admin-btn{margin-left:auto;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);font-family:'Open Sans',sans-serif;font-size:12px;padding:7px 13px;border-radius:6px;cursor:pointer;letter-spacing:.3px;white-space:nowrap;transition:background .15s}
+.admin-btn:hover{background:rgba(255,255,255,.2);color:#fff}
+/* CONNECTION BANNER */
+.conn-banner{display:none;background:var(--red);color:#fff;font-size:12px;font-weight:600;text-align:center;padding:7px 16px;letter-spacing:.3px}
+.conn-banner.show{display:block}
+.conn-banner.ok{background:var(--green)}
+/* SCREENS */
+.screen{display:none;max-width:960px;margin:0 auto;padding:24px 16px 48px}
+.screen.active{display:block}
+/* SETUP SCREEN - not full width, centered card */
+.screen-narrow{max-width:520px}
+/* CARDS */
+.card{background:#fff;border-radius:var(--r);padding:26px;box-shadow:var(--sh);margin-bottom:14px}
+.ctitle{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.csub{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5}
+/* FORMS */
+.field{margin-bottom:14px}
+label{display:block;font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+input[type=text],input[type=email],input[type=number],select{width:100%;padding:11px 13px;border:1.5px solid var(--gray);border-radius:7px;font-family:'Open Sans',sans-serif;font-size:15px;color:var(--text);background:#fff;-webkit-appearance:none;transition:border-color .15s}
+input:focus,select:focus{outline:none;border-color:var(--navy)}
+.sw{position:relative}.sw::after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px 22px;border-radius:7px;font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.5px;cursor:pointer;border:none;transition:all .13s;text-transform:uppercase}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy-dk)}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-dk)}
+.btn-gold{background:var(--gold);color:var(--navy)}.btn-gold:hover{background:var(--gold-dk)}
+.btn-full{width:100%;margin-top:6px}
+.btn:disabled{opacity:.4;cursor:not-allowed!important}
+.btn:not(:disabled):active{transform:scale(.98)}
+.btn-ghost{background:transparent;border:1.5px solid var(--gray);color:var(--muted);font-family:'Open Sans',sans-serif;font-size:13px;padding:9px 15px}
+.btn-ghost:hover{border-color:var(--navy);color:var(--navy)}
+.btn-sm{padding:6px 12px;font-size:12px;border-radius:6px}
+/* ALERTS */
+.alert{border-radius:7px;padding:10px 13px;font-size:13px;line-height:1.5;margin-top:8px;display:none}
+.alert.show{display:flex;align-items:flex-start;gap:7px}
+.a-err{background:#fff0f0;border:1.5px solid #ffcdd0;color:var(--red)}
+.a-ok{background:var(--green-bg);border:1.5px solid #a8ddc0;color:var(--green)}
+.a-info{background:#eef3ff;border:1.5px solid #c0d0f5;color:var(--navy)}
+.a-warn{background:#fffbea;border:1.5px solid #f0dc7a;color:#7a5a00}
+/* STEP DOTS */
+.sdots{display:flex;gap:7px;justify-content:center;margin-bottom:18px}
+.sdot{width:8px;height:8px;border-radius:50%;background:rgba(0,51,102,.15);transition:all .2s}
+.sdot.active{background:var(--red);width:22px;border-radius:4px}
+.sdot.done{background:rgba(0,51,102,.4)}
+/* HERO */
+.hero{text-align:center;padding:18px 0 22px}
+.hero img{height:70px;margin-bottom:10px}
+.hero h2{font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;color:var(--navy)}
+.hero p{font-size:13px;color:var(--muted);margin-top:4px}
+/* NOT CONNECTED STATE */
+.not-connected{text-align:center;padding:32px 16px}
+.not-connected .nc-icon{font-size:44px;margin-bottom:12px}
+.not-connected h3{font-family:'Oswald',sans-serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+.not-connected p{font-size:13px;color:var(--muted);line-height:1.6;max-width:360px;margin:0 auto}
+/* CHIPS */
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:6px}
+.chip{padding:9px 20px;border-radius:100px;font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;cursor:pointer;border:2px solid var(--gray);background:#fff;color:var(--text);transition:all .13s}
+.chip:hover{border-color:var(--navy);color:var(--navy)}
+.chip.sel{background:var(--navy);border-color:var(--navy);color:var(--gold)}
+.chip.dis{opacity:.28;cursor:not-allowed;pointer-events:none}
+/* VOTING */
+.topbar{background:#fff;border-radius:var(--r);padding:13px 17px;margin-bottom:13px;box-shadow:var(--sh);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px}
+.topbar strong{font-family:'Oswald',sans-serif;font-size:15px;color:var(--navy);font-weight:600}
+.topbar p{font-size:12px;color:var(--muted)}
+.vlayout{display:flex;gap:13px;align-items:flex-start}
+.vmain{flex:1;min-width:0}
+.slabel{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
+/* PLAYER GRID */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:9px;margin-bottom:16px}
+.ptile{background:#fff;border-radius:9px;padding:13px 10px 11px;cursor:pointer;border:2px solid var(--gray);transition:all .13s;text-align:center;position:relative;box-shadow:0 1px 6px rgba(0,30,70,.07);-webkit-tap-highlight-color:transparent;user-select:none}
+.ptile:hover{border-color:var(--navy);transform:translateY(-1px)}
+.ptile.sel{background:#eaf4f0;border-color:var(--green)}
+.ptile.sel .pname{color:var(--green)}
+.pcheck{position:absolute;top:7px;right:7px;width:19px;height:19px;background:var(--green);border-radius:50%;display:none;align-items:center;justify-content:center}
+.ptile.sel .pcheck{display:flex}
+.pcheck svg{width:11px;height:11px}
+.pname{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:var(--navy);line-height:1.2}
+.pteam{font-size:11px;color:var(--muted);margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:.2px}
+.page{display:inline-block;margin-top:6px;background:var(--off);color:var(--navy);font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px}
+.ptile.sel .page{background:var(--green);color:#fff}
+/* SELECTION PANEL */
+.spanel{width:230px;flex-shrink:0;background:#fff;border-radius:var(--r);padding:15px;box-shadow:var(--sh);position:sticky;top:78px}
+.scnt{font-family:'Oswald',sans-serif;font-size:30px;font-weight:700;color:var(--navy);line-height:1}
+.scntsub{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.cbar{height:5px;background:var(--gray);border-radius:3px;margin:6px 0 12px;overflow:hidden}
+.cbar-fill{height:100%;background:var(--green);border-radius:3px;transition:width .28s}
+.spanel h3{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-bottom:9px;padding-bottom:7px;border-bottom:1.5px solid var(--gray)}
+.slist{list-style:none;min-height:34px}
+.sitem{display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--gray);gap:5px}
+.sitem:last-child{border-bottom:none}
+.sitem-n{font-size:12px;font-weight:600;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sitem-t{font-size:10px;color:var(--muted);text-transform:uppercase}
+.srem{width:19px;height:19px;border-radius:50%;background:#fee;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--red);font-size:14px;line-height:1}
+.srem:hover{background:#fcc}
+.sempty{font-size:12px;color:var(--muted);text-align:center;padding:12px 0;font-style:italic}
+/* MODALS */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,20,50,.6);z-index:300;align-items:center;justify-content:center;padding:20px}
+.overlay.show{display:flex}
+.modal{background:#fff;border-radius:14px;padding:26px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,20,50,.28);max-height:90vh;overflow-y:auto}
+.modal-lg{max-width:700px}
+.micon{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 13px;font-size:24px}
+.modal h2{font-family:'Oswald',sans-serif;font-size:20px;font-weight:600;color:var(--navy);text-align:center;margin-bottom:7px}
+.modal>p{font-size:13px;color:var(--muted);text-align:center;line-height:1.6;margin-bottom:16px}
+.mlist{background:var(--off);border-radius:7px;padding:9px 12px;margin-bottom:16px;max-height:220px;overflow-y:auto}
+.mrow{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px solid var(--gray)}
+.mrow:last-child{border-bottom:none}
+.mrow .mn{font-weight:600;color:var(--navy)}.mrow .mt{color:var(--muted);font-size:12px}
+.mbtns{display:flex;flex-direction:column;gap:7px}
+/* SUCCESS */
+.sw-wrap{text-align:center;padding:24px 0}
+.sw-wrap .sicon{width:68px;height:68px;background:var(--green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.sw-wrap .sicon svg{width:38px;height:38px;color:var(--green)}
+.stitle{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.ssub{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px}
+/* OTP */
+.otp-wrap{text-align:center;padding:20px 0}
+.otp-wrap .lk{font-size:38px;margin-bottom:10px}
+.otp-wrap h2{font-family:'Oswald',sans-serif;font-size:21px;color:var(--navy);margin-bottom:6px}
+.otp-wrap p{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.6}
+.otp-row{display:flex;gap:8px;justify-content:center;margin:14px 0}
+.odig{width:44px;height:52px;text-align:center;font-size:21px;font-weight:700;font-family:'Oswald',sans-serif;border:2px solid var(--gray);border-radius:8px;color:var(--navy);padding:0;-webkit-appearance:none;-moz-appearance:textfield}
+.odig::-webkit-inner-spin-button,.odig::-webkit-outer-spin-button{-webkit-appearance:none}
+.odig:focus{outline:none;border-color:var(--navy)}
+/* ADMIN DASHBOARD */
+.admin-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+.admin-header-title{font-family:'Oswald',sans-serif;font-size:21px;font-weight:700;color:var(--navy)}
+.admin-header-sub{font-size:12px;color:var(--muted)}
+/* UPLOAD ZONE */
+.uzone{border:2px dashed var(--gray);border-radius:9px;padding:24px;text-align:center;cursor:pointer;transition:border-color .15s;background:var(--off)}
+.uzone:hover,.uzone.drag{border-color:var(--navy);background:#eef2f8}
+.uzone .ui{font-size:26px;margin-bottom:7px}
+.uzone strong{font-size:14px;color:var(--navy)}
+.uzone p{font-size:12px;color:var(--muted);margin-top:3px}
+/* COL MAPPER */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+/* RESULTS */
+.tabs{display:flex;gap:7px;margin-bottom:13px;flex-wrap:wrap}
+.tbtn{padding:7px 14px;border-radius:100px;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid var(--gray);background:#fff;color:var(--muted);transition:all .13s;text-transform:uppercase}
+.tbtn.active{background:var(--navy);border-color:var(--navy);color:var(--gold)}
+.rtbl{width:100%;border-collapse:collapse;font-size:13px}
+.rtbl th{text-align:left;padding:8px 10px;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);border-bottom:2px solid var(--gray)}
+.rtbl td{padding:8px 10px;border-bottom:1px solid var(--gray)}
+.rtbl tr:last-child td{border-bottom:none}
+.rtbl tr:hover td{background:var(--off)}
+.rb{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-family:'Oswald',sans-serif;font-size:12px;font-weight:700}
+.r1{background:var(--gold);color:var(--navy)}.r2{background:#dde3ea;color:var(--text)}.r3{background:#e8d5c0;color:var(--text)}.rn{background:var(--gray);color:var(--muted)}
+.vbw{display:flex;align-items:center;gap:7px}
+.vb{height:7px;background:var(--navy);border-radius:4px;min-width:3px}
+.vn{font-size:12px;font-weight:600;color:var(--muted)}
+/* ROSTER TABLE */
+.roster-wrap{max-height:420px;overflow-y:auto;border:1px solid var(--gray);border-radius:8px}
+.roster-tbl{width:100%;border-collapse:collapse;font-size:13px}
+.roster-tbl th{text-align:left;padding:8px 10px;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);border-bottom:2px solid var(--gray);position:sticky;top:0;background:#fff;z-index:1}
+.roster-tbl td{padding:7px 10px;border-bottom:1px solid var(--gray)}
+.roster-tbl tr.inactive td{opacity:.45;text-decoration:line-through}
+.roster-tbl tr:hover td{background:var(--off)}
+.roster-search{display:flex;gap:8px;margin-bottom:13px;flex-wrap:wrap}
+.roster-search input{flex:1;min-width:160px}
+.roster-stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.rstat{background:var(--off);border-radius:7px;padding:8px 14px;font-size:12px;text-align:center;min-width:60px}
+.rstat strong{display:block;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--navy)}
+.rstat span{color:var(--muted)}
+/* DIV BADGES */
+.div-badge{display:inline-flex;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:700;font-family:'Oswald',sans-serif;letter-spacing:.3px}
+.db-aa{background:#fff3e0;color:#8a4a00}
+.db-aaa{background:#e8f0fe;color:#003ab5}
+.db-maj{background:#fce8e8;color:#990000}
+.db-other{background:var(--gray);color:var(--muted)}
+/* BALLOT LOG */
+.vrrow{display:flex;align-items:flex-start;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--gray);gap:9px;flex-wrap:wrap}
+.vrrow:last-child{border-bottom:none}
+.vrn strong{font-size:14px;color:var(--navy);font-weight:600}
+.vrn p{font-size:12px;color:var(--muted);margin-top:2px}
+.vrp{font-size:12px;color:var(--text);margin-top:3px;line-height:1.6}
+/* ADD PLAYER FORM */
+.add-player-form{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+/* MISC */
+.inote{display:flex;align-items:flex-start;gap:8px;background:#eef3ff;border:1px solid #c0d0f5;border-radius:7px;padding:9px 12px;font-size:13px;color:var(--navy);margin-bottom:14px;line-height:1.5}
+.cblock{background:#f4f6f9;border:1px solid var(--gray);border-radius:6px;padding:9px 12px;font-family:monospace;font-size:11px;overflow-x:auto;margin:7px 0;white-space:pre;color:var(--text);max-height:200px;overflow-y:auto;line-height:1.5}
+.lempty{text-align:center;padding:26px;font-size:13px;color:var(--muted)}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.8);z-index:400;display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.loading-overlay.show{display:flex}
+.loading-spinner{width:36px;height:36px;border:3px solid var(--gray);border-top-color:var(--navy);border-radius:50%;animation:spin .8s linear infinite}
+.loading-text{font-family:'Oswald',sans-serif;font-size:16px;color:var(--navy);letter-spacing:.5px}
+.hidden{display:none!important}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+.shake{animation:shake .4s ease}
+@media(max-width:640px){.vlayout{flex-direction:column}.spanel{width:100%;position:static;order:-1}.pgrid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}.card{padding:16px 14px}.cgrid{grid-template-columns:1fr}.add-player-form{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-spinner"></div>
+  <div class="loading-text" id="loadingText">Loading…</div>
+</div>
+
+<!-- HEADER -->
+<header class="app-header">
+  <img src="https://www.pleasantonlittleleague.com/Portals/28651/logo638350316805347383.png"
+       alt="PLL" class="hlogo" onerror="this.style.display='none';document.getElementById('hfb').style.display='block'">
+  <div id="hfb" style="display:none;font-family:Oswald,sans-serif;font-size:22px;font-weight:700;color:#fff;">PLL</div>
+  <div class="hdiv"></div>
+  <div class="htitle">All-Star Voting <span>2026 Season</span></div>
+  <button class="admin-btn" id="adminLoginBtn" onclick="goAdmin()">⚙ Admin Login</button>
+</header>
+
+<!-- CONNECTION BANNER -->
+<div class="conn-banner" id="connBanner"></div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN: VOTER ACCESS CODE GATE
+═══════════════════════════════════════════════════ -->
+<div id="sVoterGate" class="screen">
+  <div style="max-width:420px;margin:0 auto;padding-top:20px;">
+    <div class="hero">
+      <img src="https://www.pleasantonlittleleague.com/Portals/28651/logo638350316805347383.png" alt="PLL" onerror="this.style.display='none'">
+      <h2 id="heroTitle">All-Star Manager Voting</h2>
+      <p id="heroSub">Pleasanton Little League · 2026 Season</p>
+    </div>
+    <div class="card">
+      <div class="ctitle">🔐 Enter Access Code</div>
+      <div class="field" style="margin-top:16px;">
+        <label>Voting Access Code</label>
+        <input type="text" id="voterCodeInput" placeholder="e.g. PLL2026"
+               style="letter-spacing:3px;font-size:18px;font-weight:600;text-transform:uppercase;"
+               autocomplete="off" autocorrect="off" spellcheck="false">
+      </div>
+      <div id="voterCodeError" class="alert a-err">Incorrect access code. Please check with your league administrator.</div>
+      <button class="btn btn-navy btn-full" id="btnVoterCode" onclick="checkVoterCode()">Enter →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN: FIRST-TIME SETUP (no API URL configured)
+═══════════════════════════════════════════════════ -->
+<div id="sFirstRun" class="screen">
+  <div style="max-width:520px;margin:0 auto;">
+    <div class="hero">
+      <img src="https://www.pleasantonlittleleague.com/Portals/28651/logo638350316805347383.png" alt="PLL" onerror="this.style.display='none'">
+      <h2>All-Star Manager Voting</h2>
+      <p>Pleasanton Little League · 2026 Season</p>
+    </div>
+    <div class="card">
+      <div class="not-connected">
+        <div class="nc-icon">⚙️</div>
+        <h3>Setup Required</h3>
+        <p>This app needs to be connected to Google Sheets before voting can begin. Please contact your league administrator to complete setup.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN: VOTING SETUP (step 1 & 2)
+═══════════════════════════════════════════════════ -->
+<div id="sSetup" class="screen">
+  <div style="max-width:520px;margin:0 auto;">
+    <div class="hero">
+      <img src="https://www.pleasantonlittleleague.com/Portals/28651/logo638350316805347383.png" alt="PLL" onerror="this.style.display='none'">
+      <h2>All-Star Manager Voting</h2>
+      <p>Pleasanton Little League · 2026 Season</p>
+    </div>
+
+    <div class="sdots">
+      <div class="sdot active" id="sd1"></div>
+      <div class="sdot" id="sd2"></div>
+      <div class="sdot" id="sd3"></div>
+    </div>
+
+    <!-- Step 1: Manager Info -->
+    <div class="card" id="c1">
+      <div class="ctitle">Manager Information</div>
+      <div class="csub">Your email prevents duplicate votes — one ballot per manager per age group.</div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" id="fEmail" placeholder="yourname@email.com" autocomplete="email">
+      </div>
+      <div class="field">
+        <label>Your Name</label>
+        <input type="text" id="fName" placeholder="First Last" autocomplete="name">
+      </div>
+      <div class="field">
+        <label>Division</label>
+        <div class="sw"><select id="fDiv">
+          <option value="">Select division…</option>
+          <option value="AA">AA</option>
+          <option value="AAA">AAA</option>
+          <option value="Majors">Majors</option>
+        </select></div>
+      </div>
+      <div class="field">
+        <label>Your Team</label>
+        <div class="sw"><select id="fTeam"><option value="">Select team…</option></select></div>
+      </div>
+      <div id="e1"    class="alert a-err">Please complete all fields before continuing.</div>
+      <div id="e1dup" class="alert a-warn"></div>
+      <button class="btn btn-navy btn-full" onclick="s1Next()">Continue →</button>
+    </div>
+
+    <!-- Step 2: Age Group -->
+    <div class="card hidden" id="c2">
+      <div class="ctitle">Choose Age Group to Vote For</div>
+      <div class="csub" id="c2sub">Select the age division you are voting for.</div>
+      <div class="chips">
+        <div class="chip" id="ch8"  onclick="pickChip(8)">8U</div>
+        <div class="chip" id="ch9"  onclick="pickChip(9)">9U</div>
+        <div class="chip" id="ch10" onclick="pickChip(10)">10U</div>
+        <div class="chip" id="ch11" onclick="pickChip(11)">11U</div>
+        <div class="chip" id="ch12" onclick="pickChip(12)">12U</div>
+      </div>
+      <div id="e2"    class="alert a-err" style="margin-top:10px;">Please select an age group.</div>
+      <div id="e2dup" class="alert a-warn" style="margin-top:8px;"></div>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <button class="btn btn-ghost" onclick="goBack1()">← Back</button>
+        <button class="btn btn-navy" style="flex:1" onclick="s2Next()">Start Voting →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN: VOTING GRID
+═══════════════════════════════════════════════════ -->
+<div id="sVote" class="screen">
+  <div class="topbar">
+    <div><strong id="vtTitle"></strong><p id="vtSub"></p></div>
+    <button class="btn btn-ghost" onclick="goBackSetup()">← Change</button>
+  </div>
+  <div class="vlayout">
+    <div class="vmain">
+      <div class="slabel" id="gridLbl"></div>
+      <div class="pgrid" id="pgrid"></div>
+    </div>
+    <div class="spanel">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <div class="scnt" id="scnt">0</div>
+        <span style="font-size:13px;color:var(--muted);">/ <span id="maxPicksLabel">10</span></span>
+      </div>
+      <div class="scntsub">Players Selected</div>
+      <div class="cbar"><div class="cbar-fill" id="cbarfill" style="width:0%"></div></div>
+      <h3>My Picks</h3>
+      <ul class="slist" id="slist"><li class="sempty">No players selected yet</li></ul>
+      <div style="margin-top:12px;">
+        <button class="btn btn-gold btn-full" id="btnSub" disabled onclick="openConfirm()">Submit Votes ✓</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN: SUCCESS
+═══════════════════════════════════════════════════ -->
+<div id="sSuccess" class="screen">
+  <div style="max-width:520px;margin:0 auto;">
+    <div class="card">
+      <div class="sw-wrap">
+        <div class="sicon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <div class="stitle">Votes Submitted!</div>
+        <div class="ssub" id="ssub"></div>
+        <div style="background:var(--off);border-radius:8px;padding:13px;margin:14px 0 20px;text-align:left;">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:9px;">Your Selected Players</div>
+          <ul id="succList" style="list-style:none;font-size:13px;"></ul>
+        </div>
+        <button class="btn btn-navy btn-full" onclick="newVote()">Vote for Another Division →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN: ADMIN
+═══════════════════════════════════════════════════ -->
+<div id="sAdmin" class="screen">
+
+  <!-- OTP Gate -->
+  <div class="card" id="aGate" style="max-width:420px;margin:0 auto;">
+    <div class="otp-wrap">
+      <div class="lk">🔒</div>
+      <h2>Admin Login</h2>
+      <p>Enter your 6-digit admin access code.<br>
+        Contact <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c4c505d45594e5d5b5952487c4c50595d4f5d5248535250554848505950595d5b4959125f5351">[email&#160;protected]</a></strong> if you need a code.</p>
+      <div style="max-width:300px;margin:0 auto;">
+        <div class="otp-row" id="otpRow">
+          <input type="number" class="odig" id="o0">
+          <input type="number" class="odig" id="o1">
+          <input type="number" class="odig" id="o2">
+          <input type="number" class="odig" id="o3">
+          <input type="number" class="odig" id="o4">
+          <input type="number" class="odig" id="o5">
+        </div>
+        <div id="otpErr" class="alert a-err">Incorrect code. Please try again.</div>
+        <button class="btn btn-navy btn-full" style="margin-top:10px;" onclick="verifyOTP()">Unlock Admin →</button>
+        <button class="btn btn-ghost btn-full" style="margin-top:6px;" onclick="showScr('sSetup')">← Back to Voting</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard (shown after auth) -->
+  <div id="aDash" class="hidden">
+
+    <div class="admin-header">
+      <div>
+        <div class="admin-header-title">Admin Dashboard</div>
+        <div class="admin-header-sub" id="apiStatusLine">Not connected to Google Sheets</div>
+      </div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;">
+        <button class="btn btn-ghost" style="font-size:12px;" onclick="adminRefresh()">↻ Refresh</button>
+        <button class="btn btn-ghost" style="font-size:12px;" onclick="exportCSV()">⬇ Export CSV</button>
+        <button class="btn btn-ghost" style="font-size:12px;" onclick="lockAdmin()">🔒 Lock</button>
+        <button class="btn btn-ghost" style="font-size:12px;" onclick="showScr('sSetup')">← Voting</button>
+      </div>
+    </div>
+
+    <!-- ── GOOGLE SHEETS CONNECTION (must be first) ── -->
+    <div class="card" id="setupCard">
+      <div class="ctitle">🔗 Google Sheets Connection</div>
+      <div class="csub">This is the single URL that powers everything — roster storage, vote recording, and results. Set this once and all devices share the same data instantly.</div>
+
+      <div class="inote">📋 <span>Need to set up the Google Sheet first? <span style="text-decoration:underline;cursor:pointer;color:var(--red);" onclick="openModal('mSheets')">View step-by-step setup guide →</span></span></div>
+
+      <div class="field">
+        <label>Apps Script Web App URL</label>
+        <input type="text" id="gsUrl" placeholder="https://script.google.com/macros/s/…/exec"
+               oninput="updateDirectLink()">
+      </div>
+      <div id="gsTestLink" style="font-size:12px;color:var(--muted);margin:4px 0 4px;display:none;">
+        → <a id="gsDirectLink" href="#" target="_blank" rel="noopener"
+             style="color:var(--navy);text-decoration:underline;">
+             Open URL in new tab — should show <code style="background:#f0f3f7;padding:1px 4px;border-radius:3px;">{"status":"ok"}</code>
+           </a>
+      </div>
+      <div id="gsRes" class="alert"></div>
+      <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;">
+        <button class="btn btn-navy" onclick="saveAndTestGS()">Save &amp; Test Connection</button>
+        <button class="btn btn-ghost" onclick="adminRefresh()" id="btnRefresh" style="display:none;">↻ Reload Data</button>
+        <button class="btn btn-ghost" onclick="repairRosterHeaders()" id="btnRepair" style="display:none;font-size:12px;color:var(--red);border-color:#ffcdd0;">🔧 Repair Roster Headers</button>
+      </div>
+    </div>
+
+    <!-- ── ROSTER UPLOAD ── -->
+    <div class="card" id="rosterCard">
+      <div class="ctitle">📋 Upload Player Roster (CSV)</div>
+      <div class="csub">Export <strong>AD-PLAYERS-DRAFT-SIMPLE</strong> from your LL software. Auto-reads columns: <em>Division Name, Player First Name, Player Last Name, Team Name, Little League Age (Baseball)</em>. Uploaded roster is saved to Google Sheets and shared with all devices instantly.</div>
+
+      <div class="uzone" id="dzone" onclick="document.getElementById('rFile').click()">
+        <div class="ui">📄</div>
+        <strong>Click to upload CSV or drag here</strong>
+        <p>Replaces existing roster in Google Sheets · takes ~5 seconds</p>
+        <input type="file" id="rFile" accept=".csv" style="display:none" onchange="handleFile(event)">
+      </div>
+      <div id="umsg" class="alert" style="margin-top:9px;"></div>
+
+      <div id="cmap" class="hidden" style="margin-top:14px;">
+        <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:8px;">Column Mapping — adjust if needed</div>
+        <div class="cgrid">
+          <div class="field" style="margin:0;"><label style="font-size:10px;">First Name</label><div class="sw"><select id="cFN"></select></div></div>
+          <div class="field" style="margin:0;"><label style="font-size:10px;">Last Name</label><div class="sw"><select id="cLN"></select></div></div>
+          <div class="field" style="margin:0;"><label style="font-size:10px;">League Age</label><div class="sw"><select id="cAg"></select></div></div>
+          <div class="field" style="margin:0;"><label style="font-size:10px;">Team Name</label><div class="sw"><select id="cTm"></select></div></div>
+          <div class="field" style="margin:0;"><label style="font-size:10px;">Division Name</label><div class="sw"><select id="cDv"></select></div></div>
+        </div>
+        <button class="btn btn-navy" style="margin-top:11px;max-width:200px;" onclick="applyMapAndUpload()">Apply &amp; Upload to Sheets →</button>
+      </div>
+    </div>
+
+    <!-- ── ROSTER MANAGER ── -->
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;flex-wrap:wrap;gap:8px;">
+        <div class="ctitle" style="margin:0;">👥 Roster Manager</div>
+        <button class="btn btn-navy btn-sm" onclick="openModal('mAddPlayer')">+ Add Player</button>
+      </div>
+      <div class="csub">Changes are saved to Google Sheets and visible to all sessions immediately.</div>
+
+      <div id="rosterStats" class="roster-stats"></div>
+
+      <div class="roster-search">
+        <input type="text" id="rSearch" placeholder="Search name or team…" oninput="renderRoster()">
+        <div class="sw" style="width:150px;"><select id="rDivFilter" onchange="renderRoster()">
+          <option value="">All Divisions</option>
+          <option value="AA">AA</option><option value="AAA">AAA</option><option value="Majors">Majors</option>
+        </select></div>
+        <div class="sw" style="width:110px;"><select id="rAgeFilter" onchange="renderRoster()">
+          <option value="">All Ages</option>
+          <option value="9">Age 9</option><option value="10">Age 10</option>
+          <option value="11">Age 11</option><option value="12">Age 12</option>
+        </select></div>
+        <div class="sw" style="width:120px;"><select id="rStatusFilter" onchange="renderRoster()">
+          <option value="active">Active</option><option value="all">All</option><option value="inactive">Inactive</option>
+        </select></div>
+      </div>
+
+      <div class="roster-wrap">
+        <table class="roster-tbl">
+          <thead><tr>
+            <th>Name</th><th>Division · Team</th><th>Age</th>
+            <th style="text-align:center;">Status</th><th style="text-align:right;">Actions</th>
+          </tr></thead>
+          <tbody id="rosterBody"></tbody>
+        </table>
+      </div>
+      <div id="rosterCount" style="font-size:12px;color:var(--muted);margin-top:8px;text-align:right;"></div>
+    </div>
+
+    <!-- ── ADMIN SETTINGS ── -->
+    <div class="card">
+      <div class="ctitle">⚙️ Admin Settings</div>
+      <div class="csub">All changes take effect immediately on this device. Season name and voter code changes require re-sharing the updated app URL with managers.</div>
+
+      <div class="sep"></div>
+
+      <!-- Season / Page Title -->
+      <div style="font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-bottom:10px;">📅 Season &amp; Display</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px;">
+        <div class="field" style="margin:0;">
+          <label>Season Year (shown in header)</label>
+          <input type="text" id="sSeason" placeholder="e.g. 2026">
+        </div>
+        <div class="field" style="margin:0;">
+          <label>Page Title</label>
+          <input type="text" id="sTitle" placeholder="e.g. All-Star Voting">
+        </div>
+      </div>
+      <button class="btn btn-navy btn-sm" onclick="saveSeasonSettings()">Save Display Settings</button>
+      <div id="seasonSaveMsg" class="alert" style="margin-top:8px;"></div>
+
+      <div class="sep"></div>
+
+      <!-- Max Picks + Divisions -->
+      <div style="font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-bottom:10px;">⚾ Voting Rules</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px;">
+        <div class="field" style="margin:0;">
+          <label>Max Picks Per Ballot</label>
+          <input type="number" id="sMaxPicks" placeholder="10" min="1" max="25">
+        </div>
+        <div class="field" style="margin:0;">
+          <label>AA can vote for ages</label>
+          <input type="text" id="sDivAA" placeholder="e.g. 9">
+        </div>
+        <div class="field" style="margin:0;">
+          <label>AAA can vote for ages</label>
+          <input type="text" id="sDivAAA" placeholder="e.g. 9,10">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px;">
+        <div class="field" style="margin:0;">
+          <label>Majors can vote for ages</label>
+          <input type="text" id="sDivMajors" placeholder="e.g. 11,12">
+        </div>
+      </div>
+      <button class="btn btn-navy btn-sm" onclick="saveVotingRules()">Save Voting Rules</button>
+      <div id="rulesSaveMsg" class="alert" style="margin-top:8px;"></div>
+
+      <div class="sep"></div>
+
+      <!-- Voter Access Code -->
+      <div style="font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-bottom:10px;">🔐 Voter Access Code</div>
+      <div class="csub" style="margin-bottom:10px;">Managers must enter this code before they can access the voting form. Share it alongside the app URL.</div>
+      <div style="display:flex;gap:9px;align-items:flex-end;flex-wrap:wrap;">
+        <div class="field" style="margin:0;flex:1;min-width:160px;">
+          <label>Voter Access Code</label>
+          <input type="text" id="sVoterCode" placeholder="e.g. PLL2026" style="letter-spacing:3px;font-size:16px;font-weight:600;text-transform:uppercase;">
+        </div>
+        <button class="btn btn-navy" onclick="saveVoterCode()">Save Code</button>
+      </div>
+      <div id="voterCodeSaveMsg" class="alert" style="margin-top:8px;"></div>
+
+      <div class="sep"></div>
+
+      <!-- Admin Login Code -->
+      <div style="font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-bottom:10px;">🔑 Admin Login Code</div>
+      <div class="csub" style="margin-bottom:10px;">6-digit code required to access this Admin Dashboard. Default is <strong>284719</strong>.</div>
+      <div style="display:flex;gap:9px;align-items:flex-end;flex-wrap:wrap;">
+        <div class="field" style="margin:0;flex:1;min-width:150px;">
+          <label>New 6-Digit Code</label>
+          <input type="number" id="nOTP" placeholder="e.g. 847261" style="letter-spacing:4px;font-size:18px;font-weight:700;">
+        </div>
+        <button class="btn btn-navy" onclick="setOTP()">Save Code</button>
+      </div>
+      <div id="otpSave" class="alert" style="margin-top:8px;"></div>
+    </div>
+
+    <!-- ── SEASON RESET ── -->
+    <div class="card" style="border:2px solid #ffcdd0;">
+      <div class="ctitle" style="color:var(--red);">🗑️ Season Reset</div>
+      <div class="csub">Wipe all ballots, votes, rosters, and submission records to start fresh for a new season. <strong>This cannot be undone.</strong></div>
+
+      <div class="alert a-warn show" style="margin-bottom:14px;">
+        ⚠️ <span>Before resetting, export your current data using the buttons above. Once reset, all vote tallies, ballots, and roster data are permanently deleted from Google Sheets.</span>
+      </div>
+
+      <div style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
+        <button class="btn btn-ghost btn-sm" onclick="exportCSV()" style="border-color:var(--navy);color:var(--navy);">⬇ Export Votes CSV</button>
+        <button class="btn btn-ghost btn-sm" onclick="exportBallotLog()" style="border-color:var(--navy);color:var(--navy);">⬇ Export Ballot Log CSV</button>
+      </div>
+
+      <div class="field">
+        <label>Type <strong>CONFIRM</strong> to enable the reset button</label>
+        <input type="text" id="resetConfirmInput" placeholder="Type CONFIRM here"
+               oninput="checkResetConfirm()"
+               autocomplete="off" autocorrect="off" spellcheck="false"
+               style="font-weight:700;letter-spacing:2px;text-transform:uppercase;">
+      </div>
+      <button class="btn btn-red btn-full" id="btnReset" disabled onclick="doSeasonReset()"
+              style="margin-top:4px;opacity:0.4;">
+        ⚠️ Reset Season &amp; Wipe All Data
+      </button>
+      <div id="resetMsg" class="alert" style="margin-top:8px;"></div>
+    </div>
+
+    <!-- ── VOTE RESULTS ── -->
+    <div class="card">
+      <div class="ctitle" style="margin-bottom:12px;">📊 Vote Results</div>
+      <div class="tabs" id="rtabs">
+        <button class="tbtn active" onclick="showRT('all',this)">All</button>
+        <button class="tbtn" onclick="showRT('8',this)">8U</button>
+        <button class="tbtn" onclick="showRT('9',this)">9U</button>
+        <button class="tbtn" onclick="showRT('10',this)">10U</button>
+        <button class="tbtn" onclick="showRT('11',this)">11U</button>
+        <button class="tbtn" onclick="showRT('12',this)">12U</button>
+      </div>
+      <div id="rCont"><div class="lempty">No votes recorded yet.</div></div>
+    </div>
+
+    <!-- ── BALLOT LOG ── -->
+    <div class="card">
+      <div class="ctitle">📋 Submission Log</div>
+      <div class="csub">Every ballot submitted. Delete a ballot to reverse its tallies and free the manager's email.</div>
+      <div class="tabs" id="ltabs">
+        <button class="tbtn active" onclick="showLT('all',this)">All</button>
+        <button class="tbtn" onclick="showLT('8',this)">8U</button>
+        <button class="tbtn" onclick="showLT('9',this)">9U</button>
+        <button class="tbtn" onclick="showLT('10',this)">10U</button>
+        <button class="tbtn" onclick="showLT('11',this)">11U</button>
+        <button class="tbtn" onclick="showLT('12',this)">12U</button>
+      </div>
+      <div id="lCont"><div class="lempty">No submissions yet.</div></div>
+    </div>
+
+  </div><!-- /aDash -->
+</div><!-- /sAdmin -->
+
+<!-- ══════════════════════════════════════════════════
+     MODALS
+═══════════════════════════════════════════════════ -->
+
+<!-- Confirm Submit -->
+<div class="overlay" id="mConfirm">
+  <div class="modal">
+    <div class="micon" style="background:#fff8e1;">⚠️</div>
+    <h2>Confirm Your Votes</h2>
+    <p>This submission is <strong>final and cannot be changed.</strong><br>Please review your picks below.</p>
+    <div class="mlist" id="mConList"></div>
+    <div class="mbtns">
+      <button class="btn btn-red btn-full" id="btnDoSubmit" onclick="doSubmit()">Yes — Submit My Votes</button>
+      <button class="btn btn-ghost btn-full" onclick="closeModal('mConfirm')">Go Back &amp; Review</button>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Ballot -->
+<div class="overlay" id="mDelete">
+  <div class="modal">
+    <div class="micon" style="background:#fff0f0;">🗑️</div>
+    <h2>Delete This Ballot?</h2>
+    <p id="mDelSub">This reverses all vote tallies and frees the manager's email to re-vote.</p>
+    <div class="mbtns">
+      <button class="btn btn-red btn-full" onclick="doDel()">Yes — Delete Ballot</button>
+      <button class="btn btn-ghost btn-full" onclick="closeModal('mDelete')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Reset Confirmation -->
+<div class="overlay" id="mReset">
+  <div class="modal">
+    <div class="micon" style="background:#fff0f0;">⚠️</div>
+    <h2>Final Confirmation</h2>
+    <p>This will permanently delete <strong>all votes, ballots, rosters, and submission records</strong> from Google Sheets. There is no undo.</p>
+    <p style="margin-top:-8px;">Make sure you have exported your data before proceeding.</p>
+    <div class="mbtns">
+      <button class="btn btn-red btn-full" onclick="executeReset()">Yes — Wipe Everything</button>
+      <button class="btn btn-ghost btn-full" onclick="closeModal('mReset')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Player -->
+<div class="overlay" id="mAddPlayer">
+  <div class="modal">
+    <p style="text-align:left;margin-bottom:14px;">Saved directly to Google Sheets — visible to all sessions.</p>
+    <div class="add-player-form">
+      <div class="field" style="margin:0;"><label>First Name</label><input type="text" id="apFN" placeholder="First"></div>
+      <div class="field" style="margin:0;"><label>Last Name</label><input type="text" id="apLN" placeholder="Last"></div>
+      <div class="field" style="margin:0;"><label>Division</label><div class="sw"><select id="apDiv">
+        <option value="AA">AA</option><option value="AAA">AAA</option><option value="Majors">Majors</option>
+      </select></div></div>
+      <div class="field" style="margin:0;"><label>Team (short)</label><input type="text" id="apTeam" placeholder="e.g. Dodgers"></div>
+      <div class="field" style="margin:0;"><label>League Age</label><div class="sw"><select id="apAge">
+        <option value="8">8</option><option value="9">9</option><option value="10">10</option>
+        <option value="11">11</option><option value="12">12</option>
+      </select></div></div>
+    </div>
+    <div id="apErr" class="alert a-err" style="margin-top:8px;">Please fill in all fields.</div>
+    <div class="mbtns" style="margin-top:14px;">
+      <button class="btn btn-navy btn-full" id="btnAddPlayer" onclick="addPlayerManual()">Add to Roster</button>
+      <button class="btn btn-ghost btn-full" onclick="closeModal('mAddPlayer')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Google Sheets Setup Guide -->
+<div class="overlay" id="mSheets">
+  <div class="modal modal-lg">
+    <h2 style="margin-bottom:14px;">Google Sheets Setup Guide</h2>
+    <div style="font-size:13px;color:var(--text);line-height:1.8;max-height:65vh;overflow-y:auto;">
+
+      <p><strong>Step 1 — Create the Google Sheet</strong></p>
+      <p>Create a new Google Sheet at <a href="https://sheets.google.com" target="_blank" style="color:var(--navy);">sheets.google.com</a>. Name it "PLL All-Star Voting 2026". You don't need to create any tabs — the script does that automatically.</p>
+
+      <p style="margin-top:12px;"><strong>Step 2 — Open Apps Script</strong></p>
+      <p>In your Sheet, click <strong>Extensions → Apps Script</strong>. Delete any existing code and paste the entire script below:</p>
+
+      <div class="cblock">// PLL All-Star Voting — Apps Script Backend
+// Paste this entire script, then deploy as a Web App
+
+const SHEET_NAME = 'PLL All-Star Voting 2025'; // must match your sheet name
+
+function doGet(e) {
+  var action = e.parameter.action;
+  if (action === 'getRoster')   return jsonResp(getRoster());
+  if (action === 'getVotes')    return jsonResp(getVotes());
+  if (action === 'getBallots')  return jsonResp(getBallots());
+  if (action === 'getHasVoted') return jsonResp(getHasVoted());
+  if (action === 'ping')        return jsonResp({status:'ok', ts: new Date().toISOString()});
+  return jsonResp({error:'unknown action'});
+}
+
+function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var action = data.action;
+  if (action === 'uploadRoster')   return jsonResp(uploadRoster(data));
+  if (action === 'submitVote')     return jsonResp(submitVote(data));
+  if (action === 'deleteBallot')   return jsonResp(deleteBallot(data));
+  if (action === 'togglePlayer')   return jsonResp(togglePlayer(data));
+  if (action === 'addPlayer')      return jsonResp(addPlayer(data));
+  if (action === 'removePlayer')   return jsonResp(removePlayer(data));
+  return jsonResp({error:'unknown action'});
+}
+
+// ── HELPERS ──────────────────────────────────────────
+function ss() { return SpreadsheetApp.getActiveSpreadsheet(); }
+
+function getOrCreateSheet(name, headers) {
+  var s = ss().getSheetByName(name);
+  if (!s) {
+    s = ss().insertSheet(name);
+    if (headers) s.appendRow(headers);
+  }
+  return s;
+}
+
+function sheetToObjects(sheet) {
+  var data = sheet.getDataRange().getValues();
+  if (data.length < 2) return [];
+  var headers = data[0];
+  return data.slice(1).map(function(row) {
+    var obj = {};
+    headers.forEach(function(h, i) { obj[h] = row[i]; });
+    return obj;
+  });
+}
+
+function jsonResp(obj) {
+  return ContentService
+    .createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+// ── ROSTER ────────────────────────────────────────────
+function getRoster() {
+  var sheet = ss().getSheetByName('Roster');
+  if (!sheet) return {players: []};
+  return {players: sheetToObjects(sheet)};
+}
+
+function uploadRoster(data) {
+  var sheet = getOrCreateSheet('Roster',
+    ['id','firstName','lastName','age','rawTeam','team','division','active','manual']);
+  // Clear existing CSV-sourced rows (keep manual=TRUE rows)
+  var rows = sheet.getDataRange().getValues();
+  var toKeep = [rows[0]]; // keep header
+  for (var i = 1; i < rows.length; i++) {
+    if (String(rows[i][8]).toUpperCase() === 'TRUE') toKeep.push(rows[i]); // manual players
+  }
+  sheet.clearContents();
+  if (toKeep.length) sheet.getRange(1, 1, toKeep.length, toKeep[0].length).setValues(toKeep);
+
+  // Append new players
+  data.players.forEach(function(p) {
+    sheet.appendRow([p.id, p.firstName, p.lastName, p.age,
+      p.rawTeam, p.team, p.division, true, false]);
+  });
+  return {status:'ok', count: data.players.length};
+}
+
+function togglePlayer(data) {
+  var sheet = ss().getSheetByName('Roster');
+  if (!sheet) return {error:'no roster'};
+  var rows = sheet.getDataRange().getValues();
+  for (var i = 1; i < rows.length; i++) {
+    if (String(rows[i][0]) === String(data.id)) {
+      var newVal = data.active;
+      sheet.getRange(i + 1, 8).setValue(newVal);
+      return {status:'ok'};
+    }
+  }
+  return {error:'player not found'};
+}
+
+function addPlayer(data) {
+  var sheet = getOrCreateSheet('Roster',
+    ['id','firstName','lastName','age','rawTeam','team','division','active','manual']);
+  sheet.appendRow([data.id, data.firstName, data.lastName, data.age,
+    data.rawTeam, data.team, data.division, true, true]);
+  return {status:'ok'};
+}
+
+function removePlayer(data) {
+  var sheet = ss().getSheetByName('Roster');
+  if (!sheet) return {error:'no roster'};
+  var rows = sheet.getDataRange().getValues();
+  for (var i = 1; i < rows.length; i++) {
+    if (String(rows[i][0]) === String(data.id)) {
+      sheet.deleteRow(i + 1);
+      return {status:'ok'};
+    }
+  }
+  return {error:'not found'};
+}
+
+// ── VOTES ─────────────────────────────────────────────
+function getVotes() {
+  var sheet = ss().getSheetByName('Votes');
+  if (!sheet) return {votes: {}};
+  var rows = sheetToObjects(sheet);
+  var votes = {};
+  rows.forEach(function(r) {
+    votes[r.key] = {
+      name: r.name, team: r.team, division: r.division,
+      age: r.age, count: Number(r.count) || 0,
+      voters: r.voters ? String(r.voters).split('|').filter(Boolean) : []
+    };
+  });
+  return {votes: votes};
+}
+
+function getHasVoted() {
+  var sheet = ss().getSheetByName('HasVoted');
+  if (!sheet) return {hasVoted: {}};
+  var rows = sheetToObjects(sheet);
+  var hv = {};
+  rows.forEach(function(r) { hv[r.key] = r.ballotId; });
+  return {hasVoted: hv};
+}
+
+function getBallots() {
+  var sheet = ss().getSheetByName('Ballots');
+  if (!sheet) return {ballots: []};
+  return {ballots: sheetToObjects(sheet)};
+}
+
+function submitVote(data) {
+  // 1. Write to Votes tab (tally)
+  var vSheet = getOrCreateSheet('Votes',
+    ['key','name','team','division','age','count','voters']);
+  var vRows = vSheet.getDataRange().getValues();
+  data.players.forEach(function(p) {
+    var key = p.key;
+    var found = false;
+    for (var i = 1; i < vRows.length; i++) {
+      if (vRows[i][0] === key) {
+        var newCount = (Number(vRows[i][5]) || 0) + 1;
+        var newVoters = vRows[i][6] ? vRows[i][6] + '|' + data.team : data.team;
+        vSheet.getRange(i+1, 6).setValue(newCount);
+        vSheet.getRange(i+1, 7).setValue(newVoters);
+        vRows[i][5] = newCount; vRows[i][6] = newVoters;
+        found = true; break;
+      }
+    }
+    if (!found) {
+      var newRow = [key, p.name, p.team, p.division, data.ageGroup, 1, data.team];
+      vSheet.appendRow(newRow);
+      vRows.push(newRow);
+    }
+  });
+
+  // 2. Write to Ballots tab
+  var bSheet = getOrCreateSheet('Ballots',
+    ['id','voter','voterName','team','age','ts','players']);
+  bSheet.appendRow([
+    data.ballotId, data.voter, data.voterName, data.team,
+    data.ageGroup, data.ts,
+    JSON.stringify(data.players)
+  ]);
+
+  // 3. Write to HasVoted tab
+  var hvSheet = getOrCreateSheet('HasVoted', ['key','email','age','ballotId','ts']);
+  hvSheet.appendRow([
+    data.voter + '__' + data.ageGroup,
+    data.voter, data.ageGroup, data.ballotId, data.ts
+  ]);
+
+  return {status:'ok'};
+}
+
+function deleteBallot(data) {
+  var ballotId = data.ballotId;
+
+  // Find ballot
+  var bSheet = ss().getSheetByName('Ballots');
+  if (!bSheet) return {error:'no ballots sheet'};
+  var bRows = bSheet.getDataRange().getValues();
+  var ballot = null;
+  var bRowIdx = -1;
+  for (var i = 1; i < bRows.length; i++) {
+    if (String(bRows[i][0]) === String(ballotId)) {
+      ballot = {
+        voter: bRows[i][1], age: bRows[i][4], team: bRows[i][3],
+        players: JSON.parse(bRows[i][6] || '[]')
+      };
+      bRowIdx = i + 1;
+      break;
+    }
+  }
+  if (!ballot) return {error:'ballot not found'};
+
+  // Decrement vote tallies
+  var vSheet = ss().getSheetByName('Votes');
+  if (vSheet) {
+    var vRows = vSheet.getDataRange().getValues();
+    ballot.players.forEach(function(p) {
+      for (var i = 1; i < vRows.length; i++) {
+        if (vRows[i][0] === p.key) {
+          var newCount = Math.max(0, (Number(vRows[i][5]) || 0) - 1);
+          var voters = String(vRows[i][6] || '').split('|');
+          var idx = voters.indexOf(ballot.team);
+          if (idx >= 0) voters.splice(idx, 1);
+          vSheet.getRange(i+1, 6).setValue(newCount);
+          vSheet.getRange(i+1, 7).setValue(voters.filter(Boolean).join('|'));
+          if (newCount <= 0) vSheet.deleteRow(i + 1);
+          break;
+        }
+      }
+    });
+  }
+
+  // Remove HasVoted entry
+  var hvSheet = ss().getSheetByName('HasVoted');
+  if (hvSheet) {
+    var hvKey = ballot.voter + '__' + ballot.age;
+    var hvRows = hvSheet.getDataRange().getValues();
+    for (var i = 1; i < hvRows.length; i++) {
+      if (String(hvRows[i][0]) === hvKey) { hvSheet.deleteRow(i + 1); break; }
+    }
+  }
+
+  // Delete ballot row
+  bSheet.deleteRow(bRowIdx);
+
+  return {status:'ok'};
+}</div>
+
+      <p style="margin-top:12px;"><strong>Step 3 — Deploy</strong></p>
+      <p>Click <strong>Deploy → New Deployment</strong>. Set type to <strong>Web App</strong>. Set "Execute as" to <strong>Me</strong> and "Who has access" to <strong>Anyone</strong>. Click Deploy and copy the URL.</p>
+
+      <p style="margin-top:12px;"><strong>Step 4 — Paste URL</strong></p>
+      <p>Paste the Web App URL into the "Google Sheets Connection" field in the Admin Dashboard. Click "Save &amp; Test Connection". A green success message means everything is working.</p>
+
+      <p style="margin-top:12px;"><strong>Step 5 — Upload roster</strong></p>
+      <p>Upload your CSV in the Roster section. The roster writes directly to the Sheet's "Roster" tab and is immediately available to all voters.</p>
+
+      <p style="margin-top:12px;"><strong>Every new season:</strong> Upload a new CSV. Optionally clear the Votes, Ballots, and HasVoted tabs in the Sheet to reset voting.</p>
+    </div>
+    <button class="btn btn-navy btn-full" style="margin-top:14px;" onclick="closeModal('mSheets')">Got It</button>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// ⚙️  LEAGUE CONFIG — Edit this section each season
+// ═══════════════════════════════════════════════════════
+const CONFIG = {
+  season:       '2026',
+  leagueName:   'Pleasanton Little League',
+  maxPicks:     10,
+  divisions: {
+    AA:     [8, 9],
+    AAA:    [9, 10],
+    Majors: [11, 12]
+  },
+  sheetsUrl: 'https://script.google.com/macros/s/AKfycbxvFVhD9iyU5tdHd0hyRE1DX1TYkQ3omXbYtVyVhEbf-6woDRF7N-QsiN7B34w-mVp_Bw/exec',
+  // Voter access code — anyone voting must enter this first
+  voterCode:    'PLL2026'
+};
+// ═══════════════════════════════════════════════════════
+const DEF_OTP   = '284719';
+const GS_KEY    = 'pll_gs_url';
+const DIV_RULES = CONFIG.divisions;
+
+function parseDivKey(divName) {
+  if (!divName) return '';
+  const d = divName.toUpperCase();
+  if (d.includes('MAJOR')) return 'Majors';
+  if (d.includes('AAA'))   return 'AAA';
+  if (d.includes('AA'))    return 'AA';
+  return divName.trim();
+}
+
+// ═══════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════
+let S = {
+  gsUrl: '',
+  connected: false,
+  voterAuthed: false,
+  sharedConfig: null,    // config loaded from Google Sheets (shared across all devices)
+  // Voting state
+  email:'', name:'', div:'', team:'', age:null, sel:[],
+  // Shared data (fetched from Sheets)
+  players:[],          // roster
+  votes:{},            // tallied votes
+  ballots:[],          // raw ballot log
+  hasVoted:{},         // email__age -> ballotId
+  // Admin
+  unlocked: false,
+  delId: null,
+  rAge:'all', lAge:'all',
+  // CSV parsing
+  hdrs:[], rows:[]
+};
+
+// ═══════════════════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════════════════
+window.onload = async () => {
+  // Show voter gate FIRST before anything else can fail
+  try {
+    S.unlocked    = sessionStorage.getItem('pll_adm')   === '1';
+    S.voterAuthed = sessionStorage.getItem('pll_voter') === '1';
+    S.gsUrl = CONFIG.sheetsUrl || localStorage.getItem(GS_KEY) || '';
+
+    // Apply config text
+    document.querySelectorAll('[data-season]').forEach(el => el.textContent = CONFIG.season);
+    document.title = `PLL All-Star Voting ${CONFIG.season}`;
+    const lbl = document.getElementById('maxPicksLabel');
+    if (lbl) lbl.textContent = CONFIG.maxPicks;
+    const cbfill = document.getElementById('cbarfill');
+    if (cbfill) cbfill.style.width = '0%';
+
+    // Wire buttons
+    bindBtn('adminLoginBtn', () => goAdmin());
+    bindBtn('btnSub',        () => openConfirm());
+    bindBtn('btnDoSubmit',   () => doSubmit());
+    bindBtn('btnRefresh',    () => adminRefresh());
+
+    // Setup OTP inputs and drag-drop
+    setupOTP();
+    setupDZ();
+    const divEl = document.getElementById('fDiv');
+    if (divEl) divEl.addEventListener('change', onDivChg);
+
+    // If not voter-authed, fetch config from Sheets first so we use
+    // the shared voter code (not just the hardcoded fallback)
+    if (!S.voterAuthed) {
+      if (S.gsUrl) {
+        try {
+          const cfgRes = await api({ action: 'getConfig' });
+          S.sharedConfig = cfgRes.config || {};
+        } catch(e) { /* network issue — fall back to CONFIG.voterCode */ }
+      }
+      showScr('sVoterGate');
+      return;
+    }
+
+    // Voter already authed this session — load and show app
+    try { loadAdminSettings(); } catch(e) {}
+    const gsInput = document.getElementById('gsUrl');
+    if (gsInput && S.gsUrl) gsInput.value = S.gsUrl;
+
+    if (S.gsUrl) {
+      await loadSharedData();
+      showScr('sSetup');
+    } else {
+      showScr('sFirstRun');
+    }
+
+  } catch(err) {
+    // Failsafe: always show something
+    console.error('Boot error:', err);
+    showScr('sVoterGate');
+  }
+};
+
+function bindBtn(id, fn) {
+  const el = document.getElementById(id);
+  if (el) { el.removeAttribute('onclick'); el.addEventListener('click', fn); }
+}
+
+// ═══════════════════════════════════════════════════════
+// GOOGLE SHEETS API
+// Plain fetch — this is what worked originally.
+// ═══════════════════════════════════════════════════════
+
+async function api(params) {
+  if (!S.gsUrl) throw new Error('No API URL configured');
+  const url = S.gsUrl + '?' + new URLSearchParams(params);
+  const res  = await fetch(url, { redirect: 'follow' });
+  const text = await res.text();
+  try { return JSON.parse(text); }
+  catch(e) { throw new Error('Bad response: ' + text.slice(0, 200)); }
+}
+
+async function apiPost(body) {
+  if (!S.gsUrl) throw new Error('No API URL configured');
+  const url = S.gsUrl + '?action=' + encodeURIComponent(body.action || '');
+  const res  = await fetch(url, {
+    method:  'POST',
+    redirect: 'follow',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body:    JSON.stringify(body)
+  });
+  const text = await res.text();
+  try { return JSON.parse(text); }
+  catch(e) { return { status: 'ok' }; }
+}
+
+async function loadSharedData(showSpinner=true) {
+  if (!S.gsUrl) return;
+  if (showSpinner) showLoading('Loading roster & votes…');
+  try {
+    const [rosterRes, votesRes, ballotsRes, hvRes, configRes] = await Promise.all([
+      api({action:'getRoster'}),
+      api({action:'getVotes'}),
+      api({action:'getBallots'}),
+      api({action:'getHasVoted'}),
+      api({action:'getConfig'})
+    ]);
+
+    // Load shared config (voter code etc)
+    S.sharedConfig = configRes.config || {};
+
+    console.log('getRoster raw:', JSON.stringify(rosterRes).slice(0,300));
+    console.log('getRoster players count:', (rosterRes.players||[]).length);
+
+    const rawPlayers = rosterRes.players || [];
+
+    // Detect what keys we actually have
+    const sampleKeys = rawPlayers.length > 0 ? Object.keys(rawPlayers[0]) : [];
+    console.log('Roster keys:', sampleKeys);
+
+    // Try to find the right key for each field regardless of column order
+    const findKey = (obj, ...candidates) => {
+      for (const c of candidates) {
+        const found = Object.keys(obj).find(k => k.toLowerCase().replace(/\s/g,'') === c.toLowerCase().replace(/\s/g,''));
+        if (found !== undefined) return found;
+      }
+      return null;
+    };
+
+    S.players = rawPlayers.map((p, idx) => {
+      // Find keys dynamically in case headers are wrong
+      const fnKey  = findKey(p, 'firstName','first','fname','playerfirstname');
+      const lnKey  = findKey(p, 'lastName','last','lname','playerlastname');
+      const ageKey = findKey(p, 'age','littleleagueage','leagueage');
+      const tmKey  = findKey(p, 'team','rawteam','teamname');
+      const divKey = findKey(p, 'division','divisionname');
+      const idKey  = findKey(p, 'id');
+      const actKey = findKey(p, 'active');
+      const manKey = findKey(p, 'manual');
+      const scopedKey = findKey(p, 'team'); // the "AAA - Dodgers" version
+
+      const firstName = String(fnKey  ? p[fnKey]  : '').trim();
+      const lastName  = String(lnKey  ? p[lnKey]  : '').trim();
+      const age       = Number(ageKey ? p[ageKey] : 0) || 0;
+      const rawTeam   = String(tmKey  ? p[tmKey]  : '').trim();
+      const division  = String(divKey ? p[divKey] : '').trim();
+      const id        = String(idKey  ? p[idKey]  : `p_${idx}`).trim() || `p_${idx}`;
+      const active    = actKey ? String(p[actKey]).toUpperCase() !== 'FALSE' : true;
+      const manual    = manKey ? String(p[manKey]).toUpperCase() === 'TRUE'  : false;
+
+      // team display name — prefer the scoped "AAA - Dodgers" version stored in col index 5
+      // Fall back to constructing it from division + rawTeam
+      const vals = Object.values(p);
+      const teamDisplay = vals[5] ? String(vals[5]).trim() : (division ? `${division} - ${rawTeam}` : rawTeam);
+
+      return { id, firstName, lastName, age, rawTeam, team: teamDisplay, division, active, manual };
+    }).filter(p => p.firstName && p.lastName && p.age > 0);
+
+    S.votes    = votesRes.votes    || {};
+    S.hasVoted = hvRes.hasVoted    || {};
+
+    // Ballots: players column is JSON string
+    S.ballots  = (ballotsRes.ballots || []).map(b => ({
+      ...b,
+      players: typeof b.players === 'string' ? JSON.parse(b.players||'[]') : (b.players||[])
+    }));
+
+    S.connected = true;
+    const rCount = S.players.length;
+    setBanner(`Connected to Google Sheets ✓  ·  ${rCount} players loaded`, true);
+
+    // Rebuild team dropdown if div already selected
+    const div = document.getElementById('fDiv').value;
+    if (div) onDivChg();
+
+    renderRoster();
+    renderR(S.rAge);
+    renderL(S.lAge);
+  } catch(err) {
+    S.connected = false;
+    setBanner('Cannot reach Google Sheets — check your URL in Admin', false);
+    console.error(err);
+  } finally {
+    hideLoading();
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// CONNECTION & ADMIN SETUP
+// ═══════════════════════════════════════════════════════
+async function saveAndTestGS() {
+  const url = document.getElementById('gsUrl').value.trim();
+  const el  = document.getElementById('gsRes');
+  if (!url) { showAlert('gsRes','Please enter the Web App URL.','a-err'); return; }
+
+  // Set URL first so api() can use it
+  S.gsUrl = url;
+
+  showLoading('Testing connection…');
+  try {
+    const data = await api({ action: 'ping' });
+    if (data.status === 'ok') {
+      localStorage.setItem(GS_KEY, url);
+      S.gsUrl = url;
+      S.connected = true;
+      showAlert('gsRes', '✅ Connected! Loading data…', 'a-ok');
+      document.getElementById('btnRefresh').style.display = '';
+      document.getElementById('apiStatusLine').textContent = 'Connected to Google Sheets ✓';
+      await loadSharedData(false);
+      showScr('sAdmin');
+      if (S.unlocked) showDash();
+    } else {
+      throw new Error('Unexpected response');
+    }
+  } catch(e) {
+    S.gsUrl = localStorage.getItem(GS_KEY) || CONFIG.sheetsUrl || '';
+    showAlert('gsRes', '❌ ' + e.message, 'a-err');
+  } finally {
+    hideLoading();
+  }
+}
+
+async function adminRefresh() {
+  await loadSharedData(true);
+  renderR(S.rAge);
+  renderL(S.lAge);
+  renderRoster();
+}
+
+function goAdmin() {
+  showScr('sAdmin');
+  if (S.unlocked) showDash();
+}
+
+// ═══════════════════════════════════════════════════════
+// TEAM HELPERS
+// ═══════════════════════════════════════════════════════
+function teamsForDiv(div) {
+  const ages = DIV_RULES[div] || [];
+  if (S.players.length > 0) {
+    const teams = [...new Set(
+      S.players
+        .filter(p => ages.includes(+p.age) && p.division === div && p.active !== false)
+        .map(p => p.team)
+    )].sort();
+    if (teams.length > 0) return teams;
+  }
+  // Fallback
+  const FB = {
+    AA:     ['AA - Angels','AA - Athletics','AA - Cardinals','AA - Cubs','AA - Giants','AA - Padres','AA - Pirates','AA - Tigers'],
+    AAA:    ['AAA - Angels','AAA - Athletics','AAA - Cardinals','AAA - Cubs','AAA - Giants','AAA - Padres','AAA - Pirates','AAA - Yankees'],
+    Majors: ['Majors - Angels','Majors - Athletics','Majors - Cardinals','Majors - Cubs','Majors - Giants','Majors - Padres','Majors - Pirates','Majors - Yankees']
+  };
+  return FB[div] || [];
+}
+
+const nt = t => (t||'').toLowerCase().trim().replace(/\s+/g,' ');
+
+function onDivChg() {
+  const div = document.getElementById('fDiv').value;
+  const sel = document.getElementById('fTeam');
+  sel.innerHTML = '<option value="">Select team…</option>';
+  teamsForDiv(div).forEach(t => {
+    const o = document.createElement('option'); o.value=t; o.textContent=t; sel.appendChild(o);
+  });
+  refreshChips();
+}
+
+// ═══════════════════════════════════════════════════════
+// STEP 1
+// ═══════════════════════════════════════════════════════
+function s1Next() {
+  const email = document.getElementById('fEmail').value.trim().toLowerCase();
+  const name  = document.getElementById('fName').value.trim();
+  const div   = document.getElementById('fDiv').value;
+  const team  = document.getElementById('fTeam').value;
+  hide('e1'); hide('e1dup');
+
+  if (!email||!name||!div||!team) { show('e1'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { show('e1','Please enter a valid email address.'); return; }
+
+  S.email=email; S.name=name; S.div=div; S.team=team;
+
+  const allowed = DIV_RULES[div]||[];
+  const done    = allowed.filter(a => S.hasVoted[`${email}__${a}`]);
+
+  if (done.length === allowed.length) {
+    show('e1dup', `⚠️ ${email} has already voted for all eligible age groups (${done.map(a=>a+'U').join(', ')}).`);
+    return;
+  }
+
+  document.getElementById('c1').style.display='none';
+  document.getElementById('c2').classList.remove('hidden');
+  refreshChips();
+
+  const eligible = allowed.filter(a => !S.hasVoted[`${email}__${a}`]);
+  document.getElementById('c2sub').textContent =
+    `As a ${div} manager you may vote for: ${allowed.map(a=>a+'U').join(' & ')}.` +
+    (done.length ? ` Already submitted: ${done.map(a=>a+'U').join(', ')}.` : '');
+  if (done.length) show('e2dup', `⚠️ Already voted for: ${done.map(a=>a+'U').join(', ')}. Remaining: ${eligible.map(a=>a+'U').join(', ')}.`);
+  dots(2);
+}
+
+function goBack1() {
+  document.getElementById('c1').style.display='';
+  document.getElementById('c2').classList.add('hidden');
+  dots(1);
+}
+
+// ═══════════════════════════════════════════════════════
+// STEP 2
+// ═══════════════════════════════════════════════════════
+function refreshChips() {
+  const div     = document.getElementById('fDiv').value || S.div;
+  const allowed = DIV_RULES[div]||[];
+  [8,9,10,11,12].forEach(a => {
+    const ch = document.getElementById('ch'+a);
+    const voted = S.hasVoted[`${S.email}__${a}`];
+    if (allowed.includes(a) && !voted) { ch.className='chip'; ch.textContent=a+'U'; }
+    else if (voted)                    { ch.className='chip dis'; ch.textContent=a+'U ✓'; }
+    else                               { ch.className='chip dis'; ch.textContent=a+'U'; }
+  });
+  S.age=null;
+}
+
+function pickChip(a) {
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('sel'));
+  document.getElementById('ch'+a).classList.add('sel');
+  S.age=a;
+}
+
+function s2Next() {
+  hide('e2');
+  if (!S.age) { show('e2'); return; }
+  if (S.hasVoted[`${S.email}__${S.age}`]) { show('e2',`Already voted for ${S.age}U with this email.`); return; }
+  dots(3);
+  buildGrid();
+  showScr('sVote');
+}
+
+// ═══════════════════════════════════════════════════════
+// VOTING GRID
+// ═══════════════════════════════════════════════════════
+function buildGrid() {
+  document.getElementById('vtTitle').textContent = `Voting: ${S.age}U All-Stars`;
+  document.getElementById('vtSub').textContent   = `${S.name} · ${S.team}`;
+  document.getElementById('gridLbl').textContent  = `Eligible ${S.age}U Players (your team excluded)`;
+  S.sel=[];
+  updatePanel();
+  const grid = document.getElementById('pgrid');
+  grid.innerHTML='';
+
+  const pl = S.players.filter(p =>
+    +p.age === S.age && p.division === S.div &&
+    p.active !== false && nt(p.team) !== nt(S.team)
+  );
+
+  if (!pl.length) {
+    grid.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);font-size:14px;">
+      No players found for ${S.age}U in ${S.div}.<br>
+      <small style="margin-top:6px;display:block;">Upload a roster in the Admin panel.</small></div>`;
+    document.getElementById('btnSub').disabled=true;
+    return;
+  }
+
+  // Sort by team then last name, group with team labels
+  const byTeam = {};
+  pl.slice().sort((a,b)=>(a.team||'').localeCompare(b.team||'')||(a.lastName||'').localeCompare(b.lastName||''))
+    .forEach(p => { if(!byTeam[p.team]) byTeam[p.team]=[]; byTeam[p.team].push(p); });
+
+  Object.keys(byTeam).sort().forEach(team => {
+    const lbl = document.createElement('div');
+    lbl.style.cssText='grid-column:1/-1;font-family:Oswald,sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-top:10px;margin-bottom:2px;padding-bottom:4px;border-bottom:1px solid var(--gray);';
+    lbl.textContent = team;
+    grid.appendChild(lbl);
+    byTeam[team].forEach(p => grid.appendChild(mkTile(p)));
+  });
+}
+
+function mkTile(p) {
+  const key=pk(p);
+  const d=document.createElement('div');
+  d.className='ptile'; d.dataset.key=key;
+  d.innerHTML=`<div class="pcheck"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round"><polyline points="2 6 5 9 10 3"></polyline></svg></div>
+<div class="pname">${p.firstName}<br>${p.lastName}</div>
+<div class="pteam">${p.rawTeam||p.team}</div><div class="page">Age ${p.age}</div>`;
+  d.addEventListener('click',()=>toggle(p,d));
+  return d;
+}
+
+function toggle(p,tile) {
+  const key=pk(p), idx=S.sel.findIndex(x=>pk(x)===key);
+  if (idx>=0) { S.sel.splice(idx,1); tile.classList.remove('sel'); }
+  else {
+    if (S.sel.length >= CONFIG.maxPicks) { shakeTile(tile); return; }
+    S.sel.push(p); tile.classList.add('sel');
+  }
+  updatePanel();
+}
+
+function updatePanel() {
+  const n=S.sel.length;
+  document.getElementById('scnt').textContent=n;
+  document.getElementById('cbarfill').style.width=(n/CONFIG.maxPicks*100)+'%';
+  const list=document.getElementById('slist');
+  list.innerHTML = n===0 ? '<li class="sempty">No players selected yet</li>'
+    : S.sel.map(p=>`<li class="sitem">
+        <div style="min-width:0;"><div class="sitem-n">${p.firstName} ${p.lastName}</div>
+        <div class="sitem-t">${p.rawTeam||p.team}</div></div>
+        <button class="srem" onclick="rmPl('${pk(p)}')">×</button></li>`).join('');
+  document.getElementById('btnSub').disabled = n<1;
+}
+
+function rmPl(key) {
+  const t=document.querySelector(`.ptile[data-key="${key}"]`);
+  if(t) t.classList.remove('sel');
+  S.sel=S.sel.filter(p=>pk(p)!==key);
+  updatePanel();
+}
+
+function pk(p) { return (p.id || `${p.firstName}_${p.lastName}_${p.team}`).replace(/\s+/g,'_'); }
+
+function shakeTile(el) {
+  el.style.transition='transform .08s'; el.style.transform='translateX(-7px)';
+  setTimeout(()=>el.style.transform='translateX(7px)',80);
+  setTimeout(()=>el.style.transform='translateX(-4px)',160);
+  setTimeout(()=>{el.style.transform='';el.style.transition='';},240);
+}
+
+function goBackSetup() {
+  S.sel=[]; showScr('sSetup');
+  document.getElementById('c1').style.display='';
+  document.getElementById('c2').classList.add('hidden');
+  dots(1);
+}
+
+// ═══════════════════════════════════════════════════════
+// CONFIRM & SUBMIT
+// ═══════════════════════════════════════════════════════
+function openConfirm() {
+  document.getElementById('mConList').innerHTML =
+    S.sel.map((p,i)=>`<div class="mrow">
+      <span class="mn">${i+1}. ${p.firstName} ${p.lastName}</span>
+      <span class="mt">${p.rawTeam||p.team}</span></div>`).join('');
+  openModal('mConfirm');
+}
+
+async function doSubmit() {
+  const btn = document.getElementById('btnDoSubmit');
+  btn.disabled=true;
+  btn.innerHTML='<span class="spin"></span>Submitting…';
+
+  const id = 'B'+Date.now()+Math.random().toString(36).slice(2,5).toUpperCase();
+  const ts = new Date().toISOString();
+
+  try {
+    await apiPost({
+      action:    'submitVote',
+      ballotId:  id,
+      voter:     S.email,
+      voterName: S.name,
+      team:      S.team,
+      ageGroup:  S.age,
+      ts,
+      players: S.sel.map(p => ({
+        key:      pk(p),
+        name:     `${p.firstName} ${p.lastName}`,
+        team:     p.rawTeam||p.team,
+        division: p.division
+      }))
+    });
+
+    // Update local state so UI reflects immediately (no re-fetch needed)
+    S.hasVoted[`${S.email}__${S.age}`] = id;
+    S.sel.forEach(p => {
+      const key=pk(p);
+      if (!S.votes[key]) S.votes[key]={name:`${p.firstName} ${p.lastName}`,team:p.rawTeam||p.team,division:p.division,age:S.age,count:0,voters:[]};
+      S.votes[key].count++;
+      S.votes[key].voters.push(S.team);
+    });
+    S.ballots.push({id,voter:S.email,voterName:S.name,team:S.team,age:S.age,ts,
+      players:S.sel.map(p=>({key:pk(p),name:`${p.firstName} ${p.lastName}`,team:p.rawTeam||p.team,division:p.division}))});
+
+    closeModal('mConfirm');
+
+    document.getElementById('ssub').textContent=`${S.name} — ${S.sel.length} players for ${S.age}U All-Stars.`;
+    document.getElementById('succList').innerHTML=S.sel.map((p,i)=>
+      `<li style="padding:5px 0;border-bottom:1px solid var(--gray);display:flex;justify-content:space-between;font-size:13px;">
+        <span style="font-weight:600;">${i+1}. ${p.firstName} ${p.lastName}</span>
+        <span style="color:var(--muted);">${p.rawTeam||p.team}</span></li>`).join('');
+
+    showScr('sSuccess');
+  } catch(err) {
+    alert('Error submitting votes: ' + err.message + '\n\nPlease try again. Your selections are still here.');
+    closeModal('mConfirm');
+  } finally {
+    btn.disabled=false;
+    btn.innerHTML='Yes — Submit My Votes';
+  }
+}
+
+function newVote() {
+  S.sel=[];S.age=null;
+  ['fEmail','fName'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('fDiv').value='';
+  document.getElementById('fTeam').innerHTML='<option value="">Select team…</option>';
+  document.getElementById('c1').style.display='';
+  document.getElementById('c2').classList.add('hidden');
+  ['e1','e1dup','e2','e2dup'].forEach(id=>hide(id));
+  dots(1); showScr('sSetup');
+}
+
+// ═══════════════════════════════════════════════════════
+// ADMIN OTP
+// ═══════════════════════════════════════════════════════
+function getCode() { return localStorage.getItem('pll_otp')||DEF_OTP; }
+
+function setupOTP() {
+  for (let i=0;i<6;i++) {
+    const inp=document.getElementById('o'+i);
+    inp.addEventListener('input',e=>{
+      const v=e.target.value.replace(/\D/g,'').slice(-1);
+      e.target.value=v;
+      if(v&&i<5) document.getElementById('o'+(i+1)).focus();
+      if(i===5&&v) verifyOTP();
+    });
+    inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value&&i>0) document.getElementById('o'+(i-1)).focus();});
+    inp.addEventListener('paste',e=>{
+      e.preventDefault();
+      const p=(e.clipboardData||window.clipboardData).getData('text').replace(/\D/g,'').slice(0,6);
+      for(let j=0;j<p.length;j++){const d=document.getElementById('o'+j);if(d)d.value=p[j];}
+      if(p.length===6) verifyOTP();
+    });
+  }
+}
+
+function verifyOTP() {
+  const entered=Array.from({length:6},(_,i)=>document.getElementById('o'+i).value).join('');
+  if(entered===getCode()){
+    sessionStorage.setItem('pll_adm','1'); S.unlocked=true;
+    hide('otpErr'); showDash();
+  } else {
+    show('otpErr','Incorrect code. Please try again.');
+    document.getElementById('otpRow').classList.add('shake');
+    setTimeout(()=>document.getElementById('otpRow').classList.remove('shake'),500);
+    for(let i=0;i<6;i++) document.getElementById('o'+i).value='';
+    document.getElementById('o0').focus();
+  }
+}
+
+function showDash() {
+  document.getElementById('aGate').classList.add('hidden');
+  document.getElementById('aDash').classList.remove('hidden');
+  if (S.gsUrl) {
+    document.getElementById('gsUrl').value = S.gsUrl;
+    document.getElementById('btnRefresh').style.display='';
+      document.getElementById('btnRepair').style.display='';
+    document.getElementById('apiStatusLine').textContent = S.connected ? 'Connected to Google Sheets ✓' : 'URL saved — not yet verified';
+  }
+  _fillSettingsForm();
+  renderR(S.rAge); renderL(S.lAge); renderRoster();
+}
+
+function lockAdmin() {
+  sessionStorage.removeItem('pll_adm'); S.unlocked=false;
+  document.getElementById('aGate').classList.remove('hidden');
+  document.getElementById('aDash').classList.add('hidden');
+  for(let i=0;i<6;i++) document.getElementById('o'+i).value='';
+  if (S.gsUrl) showScr('sSetup'); else showScr('sFirstRun');
+}
+
+function setOTP() {
+  const v=document.getElementById('nOTP').value.trim();
+  const el=document.getElementById('otpSave');
+  if(!/^\d{6}$/.test(v)){el.className='alert a-err show';el.textContent='Please enter exactly 6 digits.';return;}
+  localStorage.setItem('pll_otp',v);
+  el.className='alert a-ok show';
+  el.textContent=`✅ Access code updated. Keep this private.`;
+  document.getElementById('nOTP').value='';
+}
+
+// ═══════════════════════════════════════════════════════
+// CSV UPLOAD
+// ═══════════════════════════════════════════════════════
+function setupDZ() {
+  const dz=document.getElementById('dzone');
+  dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('drag');});
+  dz.addEventListener('dragleave',()=>dz.classList.remove('drag'));
+  dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('drag');const f=e.dataTransfer.files[0];if(f)processCSV(f);});
+}
+
+function handleFile(e){if(e.target.files[0]) processCSV(e.target.files[0]);}
+
+function processCSV(file) {
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const lines=e.target.result.split('\n').filter(l=>l.trim());
+    if(lines.length<2){alert('CSV appears empty.');return;}
+    S.hdrs=csvLine(lines[0]);
+    S.rows=lines.slice(1).map(l=>csvLine(l));
+
+    const exactFind = exact => { const i=S.hdrs.findIndex(h=>h.trim()===exact); return i>=0?S.hdrs[i]:null; };
+    const fuzzy     = (...c) => { const lo=S.hdrs.map(h=>h.toLowerCase().trim()); for(const x of c){const i=lo.findIndex(h=>h.includes(x));if(i>=0)return S.hdrs[i];} return null; };
+
+    const fnCol  = exactFind('Player First Name')             || fuzzy('first name','first','fname');
+    const lnCol  = exactFind('Player Last Name')              || fuzzy('last name','last','lname');
+    const ageCol = exactFind('Little League Age (Baseball)')  || fuzzy('league age','leagueage','age');
+    const tmCol  = exactFind('Team Name')                     || fuzzy('team name','team');
+    const dvCol  = exactFind('Division Name')                 || fuzzy('division name','division','div');
+
+    ['cFN','cLN','cAg','cTm','cDv'].forEach(id=>{
+      const sel=document.getElementById(id); sel.innerHTML='';
+      S.hdrs.forEach(h=>{const o=document.createElement('option');o.value=h;o.textContent=h;sel.appendChild(o);});
+    });
+    if(fnCol)  document.getElementById('cFN').value=fnCol;
+    if(lnCol)  document.getElementById('cLN').value=lnCol;
+    if(ageCol) document.getElementById('cAg').value=ageCol;
+    if(tmCol)  document.getElementById('cTm').value=tmCol;
+    if(dvCol)  document.getElementById('cDv').value=dvCol;
+
+    if(fnCol&&lnCol&&ageCol&&tmCol&&dvCol) {
+      applyMapAndUpload();
+    } else {
+      document.getElementById('cmap').classList.remove('hidden');
+      sa('umsg',`📄 ${S.rows.length} rows loaded — verify column mapping below.`,'a-warn');
+    }
+  };
+  reader.readAsText(file);
+}
+
+async function applyMapAndUpload() {
+  const fi=S.hdrs.indexOf(document.getElementById('cFN').value);
+  const li=S.hdrs.indexOf(document.getElementById('cLN').value);
+  const ai=S.hdrs.indexOf(document.getElementById('cAg').value);
+  const ti=S.hdrs.indexOf(document.getElementById('cTm').value);
+  const di=S.hdrs.indexOf(document.getElementById('cDv').value);
+
+  const players = S.rows
+    .map((r,idx)=>{
+      const firstName=(r[fi]||'').trim();
+      const lastName =(r[li]||'').trim();
+      const age      = parseInt(r[ai])||0;
+      const rawTeam  =(r[ti]||'').trim();
+      const divRaw   =(r[di]||'').trim();
+      const division = parseDivKey(divRaw);
+      const team     = division ? `${division} - ${rawTeam}` : rawTeam;
+      return {id:`csv_${idx}_${Date.now()}`, firstName, lastName, age, rawTeam, team, division, active:true, manual:false};
+    })
+    .filter(p=>p.firstName&&p.lastName&&p.age>0&&p.rawTeam);
+
+  if (!players.length) { sa('umsg','No valid players found. Check column mapping.','a-err'); return; }
+
+  if (!S.gsUrl) { sa('umsg','Please save your Google Sheets URL first.','a-err'); return; }
+
+  showLoading(`Uploading ${players.length} players to Google Sheets…`);
+  try {
+    const res = await apiPost({action:'uploadRoster', players});
+    if (res.status==='ok') {
+      sa('umsg',`✅ ${players.length} players uploaded to Google Sheets — available to all devices now.`,'a-ok');
+      document.getElementById('cmap').classList.add('hidden');
+      await loadSharedData(false);
+    } else {
+      throw new Error(res.error||'Upload failed');
+    }
+  } catch(err) {
+    sa('umsg','❌ Upload failed: '+err.message,'a-err');
+  } finally {
+    hideLoading();
+  }
+}
+
+function csvLine(line){
+  const r=[];let c='',q=false;
+  for(const ch of line){if(ch==='"')q=!q;else if(ch===','&&!q){r.push(c.trim());c='';}else c+=ch;}
+  r.push(c.trim());return r;
+}
+
+// ═══════════════════════════════════════════════════════
+// ROSTER MANAGER
+// ═══════════════════════════════════════════════════════
+function renderRoster() {
+  const search  = (document.getElementById('rSearch')||{value:''}).value.toLowerCase();
+  const divF    = (document.getElementById('rDivFilter')||{value:''}).value;
+  const ageF    = (document.getElementById('rAgeFilter')||{value:''}).value;
+  const statusF = (document.getElementById('rStatusFilter')||{value:'active'}).value;
+
+  let players = S.players.slice();
+  if (divF)           players = players.filter(p=>p.division===divF);
+  if (ageF)           players = players.filter(p=>String(p.age)===ageF);
+  if (statusF==='active')   players = players.filter(p=>p.active!==false);
+  if (statusF==='inactive') players = players.filter(p=>p.active===false);
+  if (search) players = players.filter(p=>`${p.firstName} ${p.lastName} ${p.team}`.toLowerCase().includes(search));
+  players.sort((a,b)=>(a.division||'').localeCompare(b.division||'')||(a.team||'').localeCompare(b.team||'')||(a.lastName||'').localeCompare(b.lastName||''));
+
+  const activeAll   = S.players.filter(p=>p.active!==false).length;
+  const inactiveAll = S.players.filter(p=>p.active===false).length;
+  const dc={AA:0,AAA:0,Majors:0};
+  S.players.filter(p=>p.active!==false).forEach(p=>{if(dc[p.division]!==undefined)dc[p.division]++;});
+
+  const statsEl = document.getElementById('rosterStats');
+  if (statsEl) statsEl.innerHTML=`
+    <div class="rstat"><strong>${S.players.length}</strong><span>Total</span></div>
+    <div class="rstat"><strong>${activeAll}</strong><span>Active</span></div>
+    <div class="rstat"><strong>${inactiveAll}</strong><span>Inactive</span></div>
+    <div class="rstat"><strong>${dc.AA}</strong><span>AA</span></div>
+    <div class="rstat"><strong>${dc.AAA}</strong><span>AAA</span></div>
+    <div class="rstat"><strong>${dc.Majors}</strong><span>Majors</span></div>`;
+
+  const tbody = document.getElementById('rosterBody');
+  if (!tbody) return;
+  tbody.innerHTML='';
+
+  if (!players.length) {
+    tbody.innerHTML=`<tr><td colspan="5" style="text-align:center;padding:24px;color:var(--muted);font-size:13px;">${S.players.length===0?'No roster loaded yet. Upload a CSV above.':'No players match current filters.'}</td></tr>`;
+    const rc = document.getElementById('rosterCount'); if(rc) rc.textContent=''; return;
+  }
+
+  players.forEach(p => {
+    const tr=document.createElement('tr');
+    if(p.active===false) tr.className='inactive';
+    tr.innerHTML=`
+      <td style="font-weight:600;">${p.firstName} ${p.lastName}${p.manual?'<span style="font-size:10px;color:var(--muted);margin-left:4px;">(manual)</span>':''}</td>
+      <td><span class="div-badge ${dbc(p.division)}">${p.division}</span> ${p.rawTeam||p.team}</td>
+      <td style="font-family:'Oswald',sans-serif;font-weight:600;">${p.age}</td>
+      <td style="text-align:center;"><span style="font-size:11px;font-weight:600;padding:3px 9px;border-radius:100px;${p.active===false?'background:#fee;color:var(--red);':'background:var(--green-bg);color:var(--green);'}">${p.active===false?'Inactive':'Active'}</span></td>
+      <td style="text-align:right;white-space:nowrap;">
+        <button class="btn btn-ghost btn-sm" onclick="doToggle('${p.id}',${p.active===false})" style="font-size:11px;margin-right:4px;">${p.active===false?'Activate':'Deactivate'}</button>
+        <button class="btn btn-ghost btn-sm" onclick="doRemove('${p.id}')" style="font-size:11px;color:var(--red);border-color:#ffcdd0;">Remove</button>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+
+  const rc=document.getElementById('rosterCount');
+  if(rc) rc.textContent=`Showing ${players.length} of ${S.players.length} players`;
+}
+
+function dbc(div){return div==='AA'?'db-aa':div==='AAA'?'db-aaa':div==='Majors'?'db-maj':'db-other';}
+
+async function doToggle(id, makeActive) {
+  const p = S.players.find(x=>x.id===id); if(!p) return;
+  p.active = makeActive;
+  renderRoster();
+  try { await apiPost({action:'togglePlayer', id, active:makeActive}); }
+  catch(e) { p.active = !makeActive; renderRoster(); alert('Failed to save change: '+e.message); }
+}
+
+async function doRemove(id) {
+  if(!confirm('Remove this player from the roster? This cannot be undone.')) return;
+  S.players = S.players.filter(p=>p.id!==id);
+  renderRoster();
+  try { await apiPost({action:'removePlayer', id}); }
+  catch(e) { alert('Failed to remove: '+e.message); await loadSharedData(); }
+}
+
+async function addPlayerManual() {
+  const fn  = document.getElementById('apFN').value.trim();
+  const ln  = document.getElementById('apLN').value.trim();
+  const div = document.getElementById('apDiv').value;
+  const tm  = document.getElementById('apTeam').value.trim();
+  const age = parseInt(document.getElementById('apAge').value);
+  hide('apErr');
+  if(!fn||!ln||!tm||!age){show('apErr');return;}
+
+  const btn = document.getElementById('btnAddPlayer');
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>Saving…';
+
+  const newP = {id:'manual_'+Date.now(),firstName:fn,lastName:ln,age,rawTeam:tm,
+    team:`${div} - ${tm}`,division:div,active:true,manual:true};
+  try {
+    await apiPost({action:'addPlayer',...newP});
+    S.players.push(newP);
+    renderRoster();
+    closeModal('mAddPlayer');
+    ['apFN','apLN','apTeam'].forEach(id=>document.getElementById(id).value='');
+    const curDiv=document.getElementById('fDiv').value;
+    if(curDiv===div) onDivChg();
+  } catch(e) {
+    alert('Failed to add player: '+e.message);
+  } finally {
+    btn.disabled=false; btn.innerHTML='Add to Roster';
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// RESULTS
+// ═══════════════════════════════════════════════════════
+function showRT(age,btn){
+  document.querySelectorAll('#rtabs .tbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); S.rAge=age; renderR(age);
+}
+
+function renderR(f) {
+  const c=document.getElementById('rCont'); if(!c) return;
+  let E=Object.values(S.votes);
+  if(f!=='all') E=E.filter(e=>String(e.age)===f);
+  E.sort((a,b)=>b.count-a.count);
+  if(!E.length){c.innerHTML='<div class="lempty">No votes recorded yet.</div>';return;}
+  const mx=E[0].count||1;
+  c.innerHTML=`<table class="rtbl"><thead><tr>
+    <th style="width:32px;">#</th><th>Player</th><th>Team</th><th>Div</th><th>Age</th><th>Votes</th>
+  </tr></thead><tbody>${E.map((e,i)=>`<tr>
+    <td><span class="rb ${i===0?'r1':i===1?'r2':i===2?'r3':'rn'}">${i+1}</span></td>
+    <td style="font-weight:600;">${e.name}</td>
+    <td style="color:var(--muted);font-size:12px;">${e.team}</td>
+    <td><span class="div-badge ${dbc(e.division)}">${e.division||'—'}</span></td>
+    <td><span style="font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;">${e.age}U</span></td>
+    <td><div class="vbw"><div class="vb" style="width:${Math.round(e.count/mx*110)}px;"></div><span class="vn">${e.count}</span></div></td>
+  </tr>`).join('')}</tbody></table>`;
+}
+
+// ═══════════════════════════════════════════════════════
+// BALLOT LOG + DELETE
+// ═══════════════════════════════════════════════════════
+function showLT(age,btn){
+  document.querySelectorAll('#ltabs .tbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); S.lAge=age; renderL(age);
+}
+
+function renderL(f) {
+  const c=document.getElementById('lCont'); if(!c) return;
+  let B=S.ballots.slice();
+  if(f!=='all') B=B.filter(b=>String(b.age)===f);
+  B.sort((a,b)=>String(b.ts).localeCompare(String(a.ts)));
+  if(!B.length){c.innerHTML='<div class="lempty">No submissions yet.</div>';return;}
+  c.innerHTML=B.map(b=>`<div class="vrrow">
+    <div class="vrn" style="flex:1;min-width:0;">
+      <strong>${b.voterName} <span style="font-size:11px;font-weight:400;color:var(--muted);">(${b.voter})</span></strong>
+      <p>${b.team} · ${b.age}U · ${new Date(b.ts).toLocaleString()}</p>
+      <div class="vrp">${(b.players||[]).map(p=>`${p.name} <span style="color:var(--muted);">(${p.team})</span>`).join(' · ')}</div>
+    </div>
+    <button class="btn btn-ghost" onclick="askDel('${b.id}')"
+      style="font-size:12px;color:var(--red);border-color:#ffcdd0;flex-shrink:0;">🗑 Delete</button>
+  </div>`).join('');
+}
+
+function askDel(id) {
+  const b=S.ballots.find(x=>x.id===id); if(!b) return;
+  S.delId=id;
+  document.getElementById('mDelSub').textContent=
+    `Delete ballot from ${b.voterName} (${b.voter}) for ${b.age}U? Removes ${(b.players||[]).length} vote(s) and frees their email.`;
+  openModal('mDelete');
+}
+
+async function doDel() {
+  closeModal('mDelete');
+  showLoading('Deleting ballot…');
+  try {
+    await apiPost({action:'deleteBallot', ballotId:S.delId});
+    await loadSharedData(false);
+  } catch(e) {
+    alert('Delete failed: '+e.message);
+  } finally {
+    hideLoading();
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// EXPORT CSV
+// ═══════════════════════════════════════════════════════
+function exportCSV() {
+  const E=Object.values(S.votes).sort((a,b)=>b.count-a.count);
+  if(!E.length){alert('No votes to export yet.');return;}
+  const rows=[['Rank','Player','Team','Division','Age Group','Total Votes','Voted By']];
+  E.forEach((e,i)=>rows.push([i+1,e.name,e.team,e.division||'',e.age+'U',e.count,(e.voters||[]).join('; ')]));
+  const csv=rows.map(r=>r.map(v=>`"${v}"`).join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download=`PLL_AllStar_Votes_${CONFIG.season}.csv`; a.click();
+}
+
+// ── VOTER ACCESS CODE ────────────────────────────────────
+function getVoterCode() {
+  // Priority: shared config from Sheets > localStorage > hardcoded CONFIG
+  return (S.sharedConfig && S.sharedConfig.voterCode) ||
+         localStorage.getItem('pll_voter_code') ||
+         CONFIG.voterCode || 'PLL2026';
+}
+
+function checkVoterCode() {
+  const input = (document.getElementById('voterCodeInput').value||'').trim().toUpperCase();
+  const code  = getVoterCode().toUpperCase();
+  if (input === code) {
+    sessionStorage.setItem('pll_voter','1');
+    S.voterAuthed = true;
+    hide('voterCodeError');
+    if (S.gsUrl) {
+      showLoading('Loading…');
+      loadSharedData().then(() => { hideLoading(); showScr('sSetup'); })
+                      .catch(() => { hideLoading(); showScr('sSetup'); });
+    } else {
+      showScr('sFirstRun');
+    }
+  } else {
+    show('voterCodeError');
+    document.getElementById('voterCodeInput').value = '';
+    document.getElementById('voterCodeInput').focus();
+  }
+}
+
+// ── ADMIN SETTINGS ───────────────────────────────────────
+const SETTINGS_KEY = 'pll_settings';
+
+function loadAdminSettings() {
+  const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY)||'{}');
+  if (saved.season)    CONFIG.season    = saved.season;
+  if (saved.pageTitle) CONFIG.pageTitle = saved.pageTitle;
+  if (saved.maxPicks)  CONFIG.maxPicks  = saved.maxPicks;
+  if (saved.divisions) Object.assign(CONFIG.divisions, saved.divisions);
+  Object.assign(DIV_RULES, CONFIG.divisions);
+  // Pre-fill settings form fields (if they exist in DOM yet)
+  _fillSettingsForm();
+}
+
+function _fillSettingsForm() {
+  const v = (id, val) => { const el=document.getElementById(id); if(el) el.value=val; };
+  v('sSeason',   CONFIG.season);
+  v('sTitle',    CONFIG.pageTitle || 'All-Star Voting');
+  v('sMaxPicks', CONFIG.maxPicks);
+  v('sDivAA',    (CONFIG.divisions.AA||[]).join(','));
+  v('sDivAAA',   (CONFIG.divisions.AAA||[]).join(','));
+  v('sDivMajors',(CONFIG.divisions.Majors||[]).join(','));
+  v('sVoterCode', (S.sharedConfig && S.sharedConfig.voterCode) || localStorage.getItem('pll_voter_code') || CONFIG.voterCode || 'PLL2026');
+}
+
+function saveSeasonSettings() {
+  const season = (document.getElementById('sSeason').value||'').trim();
+  const title  = (document.getElementById('sTitle').value||'').trim() || 'All-Star Voting';
+  if (!season) { sa('seasonSaveMsg','Please enter a season year.','a-err'); return; }
+  const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY)||'{}');
+  saved.season = season; saved.pageTitle = title;
+  localStorage.setItem(SETTINGS_KEY, JSON.stringify(saved));
+  CONFIG.season = season; CONFIG.pageTitle = title;
+  document.querySelectorAll('[data-season]').forEach(el=>el.textContent=season);
+  document.title = `PLL All-Star Voting ${season}`;
+  const ht = document.querySelector('.htitle');
+  if (ht) ht.innerHTML = `${title} <span>${season} Season</span>`;
+  document.querySelectorAll('#heroSub').forEach(el=>
+    el.textContent=`Pleasanton Little League · ${season} Season`);
+  sa('seasonSaveMsg', `✅ Updated to "${title} · ${season} Season"`, 'a-ok');
+}
+
+function saveVotingRules() {
+  const maxPicks = parseInt(document.getElementById('sMaxPicks').value)||10;
+  const parseAges = id => (document.getElementById(id).value||'')
+    .split(',').map(v=>parseInt(v.trim())).filter(n=>!isNaN(n));
+  const aa=parseAges('sDivAA'), aaa=parseAges('sDivAAA'), maj=parseAges('sDivMajors');
+  const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY)||'{}');
+  saved.maxPicks = maxPicks;
+  saved.divisions = {AA:aa, AAA:aaa, Majors:maj};
+  localStorage.setItem(SETTINGS_KEY, JSON.stringify(saved));
+  CONFIG.maxPicks = maxPicks;
+  CONFIG.divisions = saved.divisions;
+  Object.assign(DIV_RULES, saved.divisions);
+  const lbl=document.getElementById('maxPicksLabel');
+  if(lbl) lbl.textContent=maxPicks;
+  sa('rulesSaveMsg',`✅ Saved — max ${maxPicks} picks · AA:[${aa}] · AAA:[${aaa}] · Majors:[${maj}]`,'a-ok');
+}
+
+async function saveVoterCode() {
+  const code = (document.getElementById('sVoterCode').value||'').trim().toUpperCase();
+  if (!code) { sa('voterCodeSaveMsg','Please enter a code.','a-err'); return; }
+
+  // Save locally immediately
+  localStorage.setItem('pll_voter_code', code);
+  CONFIG.voterCode = code;
+  if (!S.sharedConfig) S.sharedConfig = {};
+  S.sharedConfig.voterCode = code;
+
+  // Sync to Sheets via GET (avoids CORS issues with POST)
+  try {
+    await api({ action: 'saveConfig', key: 'voterCode', value: code });
+    sa('voterCodeSaveMsg', `✅ Voter code updated to "${code}" — synced to all devices.`, 'a-ok');
+  } catch(e) {
+    sa('voterCodeSaveMsg', `✅ Voter code set to "${code}" locally. To sync all devices, re-upload the HTML with voterCode: '${code}' in the CONFIG block.`, 'a-warn');
+  }
+
+  _fillSettingsForm();
+}
+
+// ── SEASON RESET ─────────────────────────────────────────
+function checkResetConfirm() {
+  const val=(document.getElementById('resetConfirmInput').value||'').trim().toUpperCase();
+  const btn=document.getElementById('btnReset');
+  const ok = val==='CONFIRM';
+  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+}
+
+function doSeasonReset() { openModal('mReset'); }
+
+async function executeReset() {
+  closeModal('mReset');
+  showLoading('Wiping all data from Google Sheets…');
+  try {
+    await apiPost({action:'resetSeason'});
+    S.votes={}; S.ballots=[]; S.hasVoted={}; S.players=[];
+    ['pll_votes','pll_ballots','pll_hv','pll_p'].forEach(k=>localStorage.removeItem(k));
+    document.getElementById('resetConfirmInput').value='';
+    checkResetConfirm();
+    renderR('all'); renderL('all'); renderRoster();
+    sa('resetMsg','✅ Season reset complete. All data wiped. Ready for new season.','a-ok');
+  } catch(e) {
+    sa('resetMsg','❌ Reset failed: '+e.message,'a-err');
+  } finally { hideLoading(); }
+}
+
+async function repairRosterHeaders() {
+  showLoading('Repairing roster headers…');
+  try {
+    const res = await api({ action: 'repairRoster' });
+    await loadSharedData(false);
+    sa('gsRes', '✅ ' + (res.message || 'Done'), 'a-ok');
+  } catch(e) {
+    sa('gsRes', '❌ Repair failed: ' + e.message, 'a-err');
+  } finally { hideLoading(); }
+}
+
+function updateDirectLink() {
+  const url = (document.getElementById('gsUrl').value||'').trim();
+  const wrap = document.getElementById('gsTestLink');
+  const link = document.getElementById('gsDirectLink');
+  if (url && url.includes('script.google.com')) {
+    link.href = url + '?action=ping';
+    wrap.style.display = '';
+  } else {
+    wrap.style.display = 'none';
+  }
+}
+
+function exportBallotLog() {
+  if (!S.ballots.length) { alert('No ballots to export yet.'); return; }
+  const rows=[['Ballot ID','Voter Email','Voter Name','Team','Age Group','Submitted','Players']];
+  S.ballots.forEach(b=>rows.push([
+    b.id,b.voter,b.voterName,b.team,b.age+'U',
+    new Date(b.ts).toLocaleString(),
+    (b.players||[]).map(p=>p.name).join('; ')
+  ]));
+  const csv=rows.map(r=>r.map(v=>`"${(v||'').toString().replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download=`PLL_Ballot_Log_${CONFIG.season}.csv`; a.click();
+}
+
+// ═══════════════════════════════════════════════════════
+// UI HELPERS
+// ═══════════════════════════════════════════════════════
+function showScr(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+  else console.error('showScr: screen not found:', id);
+}
+function openModal(id){document.getElementById(id).classList.add('show');}
+function closeModal(id){document.getElementById(id).classList.remove('show');}
+function dots(n){for(let i=1;i<=3;i++){const d=document.getElementById('sd'+i);d.className='sdot'+(i<n?' done':i===n?' active':'');}}
+function show(id,msg){const el=document.getElementById(id);if(!el)return;if(msg)el.textContent=msg;el.classList.add('show');}
+function hide(id){const el=document.getElementById(id);if(el)el.classList.remove('show');}
+function sa(id,msg,cls){const el=document.getElementById(id);if(!el)return;el.textContent=msg;el.className=`alert ${cls} show`;}
+function showAlert(id,msg,cls){sa(id,msg,cls);}
+function setBanner(msg,ok){const b=document.getElementById('connBanner');b.textContent=msg;b.className='conn-banner show'+(ok?' ok':'');setTimeout(()=>b.className='conn-banner',ok?3000:8000);}
+function showLoading(msg){document.getElementById('loadingText').textContent=msg||'Loading…';document.getElementById('loadingOverlay').classList.add('show');}
+function hideLoading(){document.getElementById('loadingOverlay').classList.remove('show');}
+
+// Expose all functions to window so inline onclick attributes work in any context
+window.goAdmin=goAdmin;
+window.s1Next=s1Next;
+window.goBack1=goBack1;
+window.s2Next=s2Next;
+window.pickChip=pickChip;
+window.goBackSetup=goBackSetup;
+window.openConfirm=openConfirm;
+window.doSubmit=doSubmit;
+window.newVote=newVote;
+window.verifyOTP=verifyOTP;
+window.lockAdmin=lockAdmin;
+window.adminRefresh=adminRefresh;
+window.saveAndTestGS=saveAndTestGS;
+window.applyMapAndUpload=applyMapAndUpload;
+window.applyMap=applyMapAndUpload;
+window.setOTP=setOTP;
+window.exportCSV=exportCSV;
+window.showRT=showRT;
+window.showLT=showLT;
+window.openModal=openModal;
+window.closeModal=closeModal;
+window.showScr=showScr;
+window.doDel=doDel;
+window.addPlayerManual=addPlayerManual;
+window.doToggle=doToggle;
+window.doRemove=doRemove;
+window.askDel=askDel;
+window.rmPl=rmPl;
+window.checkVoterCode=checkVoterCode;
+window.saveSeasonSettings=saveSeasonSettings;
+window.saveVotingRules=saveVotingRules;
+window.saveVoterCode=saveVoterCode;
+window.checkResetConfirm=checkResetConfirm;
+window.doSeasonReset=doSeasonReset;
+window.executeReset=executeReset;
+window.exportBallotLog=exportBallotLog;
+window.loadAdminSettings=loadAdminSettings;
+window.handleFile=handleFile;
+window.repairRosterHeaders=repairRosterHeaders;
+window.updateDirectLink=updateDirectLink;
+</script>
+</body>
+</html>
